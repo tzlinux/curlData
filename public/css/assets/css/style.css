@@ -1,0 +1,168 @@
+﻿#head{width: 100%; float: left;}
+/*top*/
+.top{width: 100%;float:left;background: #666666;}
+.top1{width: 1000px;height:35px;margin: 0 auto;line-height: 35px;color: #fff;}
+.top_left{float: left;width: 40%; margin-left:17px}
+.top_right{float: right;width: 24%;}
+/*logo*/
+.logo{width: 100%;float: left;background:url(../images/logo_bg.jpg) repeat-x;}
+.logo1{width: 1000px;margin: 0 auto;height: 62px;}
+.logo_img{width:40%;float: left;}
+.logo_img img{margin: 8px;}
+/*搜索框*/
+.logo_right{width: 27%; float: right}
+.logo_input{width: 158px;float: right;}
+.logo_input input{margin-top: 17px;height: 20px;} 
+.souk{background: url(../images/souk.jpg) no-repeat;float: left;padding-left: 7px; width:128px}
+.sous{background: url(../images/sous.jpg) no-repeat;width: 30px;float: left;margin-left: -7px;}
+.web_lang{
+float: right;
+width: 103px;
+margin: 17px auto;
+}
+.cti_web_lang{ position:relative; width:103px; height:21px;list-style: none;}
+.cti_web_lang a{width:82px!important;color:#505050;}
+.cti_web_ddl_lang{ position:absolute; left:0px; top:19px; width:102px; z-index:9911; border:1px solid #b2b2b2; background:#FFF; display:none;}
+.cti_web_ddl_lang a{border:none;color:#505050; text-indent:0px; clear:both; display:block;font-weight:normal;float:left;padding:6px 10px; width:170px;text-align:left;}
+.cti_web_ddl_lang a:hover{ color:#88d34f; background:#e5f5d8;}
+.cti_web_lang_select
+{
+height:19px; line-height:19px;line-height:20px\0;width:103px; border:0;color:#505050;font-size:12px; text-align:left; float:left;padding:0 5px; background:url(../images/lang_icon_bg.jpg) left top no-repeat;
+
+}
+.cit_web_mobile{margin-left:5px;}
+/*nav*/
+.nav{width: 100%;float: left;background: url(../images/nav_bg.jpg) repeat-x;}
+.nav ul{width: 1000px;margin: 0 auto;z-index: 10;}
+.nav ul li{height:47px;float: left;width: 142px;position:relative;}
+.nav ul li a{line-height: 47px;width:130px;display: block;color: #666;font-size: 14px;
+font-weight: bold;text-decoration: none;padding-left: 15px;}
+.nav ul li a, .nav ul li a:visited { display:block;  text-decoration:none;height:47px; 
+ border-width:1px 1px 0 0;  line-height:47px;} 
+.nav ul li ul { display: none;}  
+.nav ul li:hover a { color:#0081CB; background:url(../images/nav_li_hover_bg.jpg) no-repeat; } 
+.nav ul li:hover ul { display:block; position:absolute; top: 47px;left: 2px;width: 137px;border: 1px solid #CCC;} 
+.nav ul li:hover ul li{height: 30px;line-height: 30px;display: block;border-bottom: 1px solid #CECDCD;width:136px;}
+.nav ul li:hover ul li a {display:block;background:#fefefe; color:#666;height: 30px;line-height: 30px;font-size: 12px; font-weight:100;text-align: left;padding-left: 10px;width:127px}
+.nav ul li:hover ul li a:hover { background:#e8e7e5; color:#666;  }
+/*banner*/
+#banner{width: 100%;float: left;height: 396px;}
+/*中间内容*/
+#center{width: 100%; float: left;background: url(../images/center_bg.jpg) repeat-x;}
+.center1{width: 1000px;margin: 0 auto;}
+
+/*footer*/
+#footer{width: 100%; float: left;background: url(../images/footer_bg.jpg) repeat-x;height: 260px;}
+/*部分分类*/
+.footer_nav{width: 1000px;margin: 0 auto;height: 200px;border-bottom: 1px solid #b2b2b2;}
+.footer_nav .section{float: left;margin-right: 68px;min-width: 100px;position: relative;padding: 32px 0px 0px 0px;}
+.footer_nav .information {width: 134px;margin-right: 25px;text-align: left;margin-left: 7px;}
+.footer_nav .section span{font-weight: bold;font-size: 14px;color: #fff;display: block;margin-bottom: 10px;text-align: center;}
+.footer_nav .information span{text-align: left;}
+.footer_nav .information ul{text-align: left;margin-left: 0px;line-height: 20px;}
+.footer_nav .section li a{color: #fff;text-decoration: none;}
+/*版权所有*/
+.copyright{width: 1000px;margin: 0 auto;margin-top: 18px;line-height: 25px;color: #fff;}
+.copyright span.copyright_left{float: left;}
+.copyright span.copyright_right{float: right;margin-right: 20px;}
+.copyright span.copyright_right a{color:#fff;text-decoration: none;}
+/*内页公司简介*/
+#about_center{width: 100%;float: left;}
+.about_center1{width:1000px;margin: 0 auto;}
+/*位置*/
+.about_center1 p.position{height: 49px;float: left;width: 100%;line-height: 49px;margin-left: 10px;}
+.position span{background: url(../images/about_fltb.jpg) no-repeat 0px 2px;padding-left: 15px;}
+.about_center1 p.position a{color: #000;text-decoration: none;}
+.show-layer{
+    position: relative;
+    height: 49px;
+    line-height: 49px;
+}
+.search-vide{
+    position: absolute;
+    top: 0;
+    right: 0;
+    
+    width: 200px;
+    bottom: 0;
+    
+    margin: auto auto;
+    font-size: 0
+}
+.search-vide .key{
+    width: 128px;
+    height: 20px;
+    vertical-align: middle;
+    border: 1px solid #999;
+    text-indent: 0.5em;
+}
+.search-vide .search-btn{
+    width: 30px;
+    height: 22px;
+    line-height: 22px;
+    vertical-align: middle;
+    
+    background: #0081cb;
+    color: #fff;
+}
+/*内页公司左边*/
+.about_Introduction{float: left;width: 100%;margin-bottom: 10px;min-height: 500px}
+.about_Introduction_left{width: 24%;float: left;}
+.left_title{width: 240px;}
+.public_contact{border: 5px solid #e9e9e9;width: 225px;margin-top:10px;}
+.public_contact p{color: #0081CB;margin-left: 12px;margin-top: 16px;font-size: 14px;font-weight: bold;margin-bottom: 5px;}
+.public_contact ul{margin-left:12px ;margin-bottom: 30px;}
+.public_contact ul li{line-height: 25px;color: #646464;}
+.public_contact ul li.name{color: #0081CB;}
+.about_Introduction_right{width:72%;float: left;border: 5px solid #e9e9e9;}
+.right_title{height: 26px;border-bottom: 2px solid #e5e5e5;width: 670px;display: block;margin-left: 33px;font-size: 16px;font-weight: bold;margin-top:30px;}
+.right_title span{width:70%;height: 26px;display: block;}
+.right_main{width: 660px;margin-left: 33px;margin-top: 20px;margin-bottom: 20px;}
+.right_main p{line-height: 25px;font-size: 14px;/*text-indent:2em;*/color:#646464;}
+/*.right_main img{margin:20px 0;}*/
+
+.right_main .contact_information{width: 685px;float: left; border-bottom: 1px solid #e5e5e5;margin-bottom: 10px;}
+.contact_information ul{width: 245px;float: left;}
+.contact_information ul li{line-height: 25px;}
+.contact_information img{float: left;width: 397px;margin: 0;margin-bottom: 10px;}
+
+.proDd{padding-bottom:20px;}
+.proDd span{width:281px;overflow:hidden;}
+.proDd span img{padding:10px;border:1px solid #dadada;width:259px;height:200px;}
+.proDet{width:305px;}
+.proDet h3,.msTxt h2{font-size:16px;color:#0081cb;}
+.proDet p{color: #666;line-height: 20px;padding: 15px 0;}
+.abNav{width:230px;margin:0 auto;background:#fff;}
+.naTit{margin-bottom: 5px;}
+.naTit{height: 40px;line-height: 40px;display:block; background:#e9e9e9;}
+.subNav span{line-height: 32px;display:block;background:url(../images/pr_ul_li_bg.jpg) no-repeat 26px 15px;}
+.naTit span,.subNav span a{display:block;font-weight:bold;padding-left:45px; color:#666; font-weight:normal; cursor: pointer}
+.naTit span{ background:url(../images/pr_li_bg.jpg) no-repeat 26px 15px;}
+.subNav{display:none;margin-top: -5px;margin-bottom: 10px; }
+.subNav span a{text-decoration: none;}
+.subNav span a:hover{ color:#0081cb}
+.abNavIn .naTit span{color: #fff;font-size: 14px;font-weight: bold;margin-bottom:5px ; background:url(../images/pr_ul_li_click.jpg) no-repeat;}
+.abNavIn .naTit span a{color: #fff;}
+.naTit span:hover{color: #fff;font-size: 14px;font-weight: bold; background:url(../images/pr_li_bghover.jpg) no-repeat 26px 15px;}
+.naTit:hover{background:#0081cb;color: #fff;}
+.naTit span a{color:#3e3f3f;height: 40px;line-height: 40px;display:block;}
+.naTit span a:hover{color:#fff;height: 40px;line-height: 40px;display:block;}
+
+.clearfix {}
+.clearfix li{float:left;display:inline; line-height:30px;width:141px;text-align:center;margin: 12px;}
+.clearfix li img{padding:10px;border:1px solid #dadada;display:block;}
+.clearfix li a{color:#666;}
+.clearfix li a:hover img{border:1px solid #0081CB;}
+.clearfix li a:hover{color:#0081CB;}
+
+.fy{line-height: 25px;font-size: 14px;}
+.fy a{color: #646464;}
+
+.contact_contact{border: 5px solid #e9e9e9;width: 225px;margin-top: 10px;height: 947px;}
+.contact_contact p{color: #0081CB;margin-left: 12px;margin-top: 16px;font-size: 14px;font-weight: bold;margin-bottom: 5px;}
+.contact_contact ul{margin-left:12px ;margin-bottom: 30px;}
+.contact_contact ul li{line-height: 25px;color: #646464;}
+.contact_contact ul li.name{color: #0081CB;}
+
+.cpDetail p{text-indent:0;}
+

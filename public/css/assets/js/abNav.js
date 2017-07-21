@@ -1,0 +1,15 @@
+$(function(){
+	$('.naTit').click(function(){
+		$sub=$(this).siblings('.subNav');
+		if($sub.is(':visible'))
+		{
+			$sub.stop().slideUp();
+			$(this).parent('li').removeClass('abNavIn');
+		}
+		else
+		{
+			$sub.stop().slideDown();
+			$(this).parent('li').addClass('abNavIn');
+		}
+	})
+})

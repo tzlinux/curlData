@@ -1,0 +1,28 @@
+﻿body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,/* structural elements 结构元素 */
+dl,dt,dd,ul,ol,li,/*  list elements 列表元素*/
+pre,/* text formatting elements 文本格式元素 */
+fieldset,lengend,button,input,textarea, /* form elements 表单元素 */
+th,td{margin:0;padding:0;}
+body,button,input,textarea{font:12px "微软雅黑", "\5b8b\4f53", sans-serif;border:none; }
+h1{font-size: 18px;/* 18px / 12px = 1.5 */ }
+h2{font-size: 16px;}
+h3{font-size: 14px;}
+h4,h5,h6{font-size: 100%;}
+address,cite,dfn,em,var{font-style: normal;}
+code,kbd,pre,samp,tt{ font-family: "Courier New", Courier, monospace; } /* 统一等宽字体 */
+small{font-size: 12px;}/* 小于 12px 的中文很难阅读，让 small 正常化 */
+img{border:none;}
+ul,ol{list-style: none;}
+a{text-decoration:none;}a:hover{text-decoration: underline;}
+table{border-collapse: collapse;border-spacing: 0;}
+/* 让非ie浏览器默认也显示垂直滚动条，防止因滚动条引起的闪烁 */
+html { overflow-y: scroll; }
+html,body{-webkit-text-size-adjust:none;}
+
+.fM{font-family: "Microsoft Yahei";}
+.fS{font-family: "\5b8b\4f53";}
+.clear{height:1px;clear:both;margin-bottom:-1px;overflow:hidden;visibility:hidden;display:block;}
+.left{ float:left;}.right{float:right;}
+.clearfix:after{content:'\20';display:block;height:0;clear:both;}
+.clearfix{*zoom:1;overflow: hidden;}
+.dInline{display:inline;}
