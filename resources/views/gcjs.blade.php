@@ -197,7 +197,12 @@
                 @foreach ($data as $user)
                 <li>&gt;
                     <span>{{$user->created_at}}</span>
-                    <a href="/gcjs_info/{{$user->id}}" target="_blank">{{$user->title}}</a>
+                    <?php $len = mb_strlen($user->title); $index=33; ?>
+                     @if ($len >$index)
+                      <a href="/gcjs_info/{{$user->id}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
+                     @else
+                      <a href="/gcjs_info/{{$user->id}}" target="_blank">{{$user->title}}</a>
+                     @endif
                 </li>
                 @endforeach
            </ul>
