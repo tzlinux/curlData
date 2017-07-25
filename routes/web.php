@@ -11,10 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-
-    return view('gcjs',['data'=>[]]);
-});
+Route::get('/','GcjsController@index');
 
 /*
  * 工程建设
