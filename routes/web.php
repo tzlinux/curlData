@@ -23,3 +23,8 @@ Route::get('/gcjs_info/{id}','GcjsController@info');
  * 政府采购
  * */
 Route::get('/zfcg','ZfcgController@index');
+Route::get('/zfcg_info/{id}','ZfcgController@info');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

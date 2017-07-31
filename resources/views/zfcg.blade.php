@@ -161,10 +161,10 @@
 				<span><a href="">&nbsp;&nbsp;首页&nbsp;&nbsp;</a>&gt;&nbsp;&nbsp;新闻中心</span>
 			</p> 
 			<div class="search-vide">
-				<form action="">
-					<input type="text" class="key">
-					<button type="submit" class="search-btn">搜索</button>
-				</form>
+                 <form action="/zfcg" method="get">
+                  <input type="text" class="key" name="title" value="{{$title}}">
+                  <button type="submit" class="search-btn">搜索</button>
+                 </form>
 			</div>
 		</div>
     <div class="about_Introduction"> 
@@ -179,7 +179,7 @@
           </div></li>
          <li>
           <div class="naTit">
-           <span><a href="/zfcg">政府采购</a></span>
+           <span><a href="/zfcg">铁路工程</a></span>
           </div></li> 
         </ul> 
        </div> 
@@ -188,16 +188,21 @@
      <!--公司简介右边内容--> 
      <div class="about_Introduction_right"> 
       <div class="right_title"> 
-       <span>工程建设</span> 
+       <span>铁路工程</span>
        <p style="border-bottom: 2px solid #0081cb;width: 76px;"></p> 
       </div>
       <?php if(!empty($data)) { ?>
           <div class="right_main">
            <ul class="newsList">
                 @foreach ($data as $user)
+                   <?php $len = mb_strlen($user->title); $index=33; ?>
                 <li>&gt;
                     <span>{{$user->created_at}}</span>
-                    <a href="/info/{{$user->id}}" target="_blank">{{$user->title}}</a>
+                     @if ($len >$index)
+                      <a href="/zfcg_info/{{$user->id}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
+                     @else
+                      <a href="/zfcg_info/{{$user->id}}" target="_blank">{{$user->title}}</a>
+                 @endif
                 </li>
                 @endforeach
            </ul>
