@@ -18,7 +18,7 @@
     <!--头部-->
     <div class="top">
         <div class="top1">
-            <span class="top_left">欢迎访问AMAE国际仪器集团</span>
+            <span class="top_left">欢迎访问XXX</span>
             <span class="top_right"><strong style="font-size: 14px;">Hotline：+86-755-3368 1399</strong></span>
         </div>
     </div>
@@ -62,7 +62,7 @@
             </li>
             <li><a href="company_news/">新闻中心</a>
                 <ul>
-                    <li><a href="company_news/">公司新闻</a></li>
+                    <li><a href="company_news/">公司新闻11</a></li>
                     <li><a href="hangye/">行业新闻</a></li>
                 </ul>
             </li>
@@ -100,12 +100,12 @@
                     <ul>
                         <li>
                             <div class="naTit">
-                                <span><a href="company_news/">公司新闻</a></span>
+                                <span><a href="/gcjs">工程建设</a></span>
                             </div>
                         </li>
                         <li>
                             <div class="naTit">
-                                <span><a href="hangye/">行业新闻</a></span>
+                                <span><a href="/zfcg">铁路工程</a></span>
                             </div>
                         </li>
                     </ul>
