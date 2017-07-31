@@ -33,6 +33,7 @@ Route::any('/zhuce','user\ZhuceController@zhuce');
 Route::any('/denglu','user\ZhuceController@denglu');
 Route::get('/user_list','user\UserController@user_list');
 Route::get('/clear','user\UserController@clear');
+Route::get('/yanz','user\UserController@clear');
 
 
 

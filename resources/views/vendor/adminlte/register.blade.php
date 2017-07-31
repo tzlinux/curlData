@@ -11,13 +11,7 @@
 @section('body')
     <div class="register-box">
         <div class="register-logo">
-            --}}
-{{--<a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">--}}{{--
-
-                {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
-            --}}
-{{--</a>--}}{{--
-
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
 
         <div class="register-box-body">
@@ -45,7 +39,6 @@
                         </span>
                     @endif
                 </div>
-
                 <div class="form-group has-feedback {{ $errors->has('password') ? 'has-error' : '' }}">
                     <input type="password" name="password" class="form-control"
                            placeholder="{{ trans('adminlte::adminlte.password') }}">
