@@ -25,6 +25,17 @@ Route::get('/gcjs_info/{id}','GcjsController@info');
 Route::get('/zfcg','ZfcgController@index');
 Route::get('/zfcg_info/{id}','ZfcgController@info');
 
+
+/*
+ * 注册
+ * */
+Route::any('/zhuce','user\ZhuceController@zhuce');
+Route::any('/denglu','user\ZhuceController@denglu');
+Route::get('/user_list','user\UserController@user_list');
+Route::get('/clear','user\UserController@clear');
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

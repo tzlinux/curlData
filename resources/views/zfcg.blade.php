@@ -92,8 +92,15 @@
    <div class="top"> 
     <div class="top1"> 
      <span class="top_left">欢迎访问</span>
-     <span class="top_right"><strong style="font-size: 14px;">联系电话:xxx</strong></span> 
-    </div> 
+        <?php if(!session('user_name')) { ?>
+     <span class="top_right"><a href="/zhuce">注册用户</a></span>
+     <span class="top_right"><a href="/denglu">登录</a></span>
+        <?php } else { ?>
+     欢迎你&nbsp;&nbsp;&nbsp;<?php print_r(session('user_name')); ?>
+     &nbsp;&nbsp;&nbsp;
+     <a href="/clear">安全退出</a>
+        <?php }?>
+    </div>
    </div> 
    <!--logo--> 
    <div class="logo"> 
