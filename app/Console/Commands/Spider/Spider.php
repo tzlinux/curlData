@@ -123,7 +123,7 @@ abstract class Spider extends Command
                 if (! is_null($content['uuid']) && ! $this->has($content['uuid'])) {
                     try {
                         $c = $this->model()->create($content);
-                        
+
                         $bidder = new Bidder();
                         /*分开录入*/
                         foreach($content['bidders'] as $k=>$v)

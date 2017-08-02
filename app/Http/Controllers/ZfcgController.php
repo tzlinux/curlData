@@ -19,10 +19,11 @@ class ZfcgController extends Controller
     {
         $res = [];
         $title = '';
+        $start = '';
+        $end   = '';
         $input = $input=Request::all();
-        if(empty($input['title'])) {
-            $res = DB::table('railways')->paginate(10);
-        }else {
+        if(!empty($input['title'])) {
+
             $value = $request->session()->get('user_name');
             if(empty($value)){
                 return view('yanz');
@@ -32,9 +33,27 @@ class ZfcgController extends Controller
                 ->where('title', 'like', '%'.$input['title'].'%')
                 ->paginate(10);
             $title = $input['title'];
+
+        }elseif((!empty($input['start'])) && (!empty($input['end']))) {
+
+            $value = $request->session()->get('user_name');
+            if(empty($value)){
+                return view('yanz');
+                die;
+            }
+
+            $res =DB::table('railways')
+                ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
+                ->whereBetween('bidder.price',[3,20])
+                ->paginate(10);
+            $start = $input['start'];
+            $end   = $input['end'];
+
+        }else{
+            $res = DB::table('railways')->paginate(10);
         }
 
-        return view('zfcg',['data'=>$res,'title'=>$title]);
+        return view('zfcg',['data'=>$res,'title'=>$title,'start'=>$start,'end'=>$end]);
     }
 
     public function info(RequestandResponse $request,$id)
@@ -44,7 +63,7 @@ class ZfcgController extends Controller
             return view('yanz');
             die;
         }
-        $user = DB::table('railways')->where('id', '=', $id)->get()->toArray();
+        $user = DB::table('railways')->where('uuid', '=', $id)->get()->toArray();
 
         return view('zfcg_info',['data'=>$user[0]]);
     }

@@ -11,7 +11,7 @@
   <title>中标结果公示</title> 
   <meta name="Keywords" content="工程建设" /> 
   <meta name="Description" content="工程建设" /> 
- </head> 
+ </head>
  <body>
  <style type="text/css">
      #pull_right{
@@ -186,7 +186,7 @@
           </div></li>
          <li>
           <div class="naTit">
-           <span><a href="/zfcg">政府采购</a></span>
+           <span><a href="/zfcg">铁路工程</a></span>
           </div></li> 
         </ul> 
        </div> 

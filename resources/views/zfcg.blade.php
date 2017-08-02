@@ -86,6 +86,34 @@
      .clear{
          clear: both;
      }
+     .search-vide{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 440px;
+      bottom: 0;
+      margin: auto auto;
+      font-size: 0;
+     }
+     .search-vide .key{
+      width: 104px;
+      height: 20px;
+      vertical-align: middle;
+      border: 1px solid #8bb9b4;
+      text-indent: 0.5em;
+      display: inline-block;
+      margin-left: 10px;
+     }
+     .search-vide .search-btn{
+      width: 30px;
+      height: 22px;
+      line-height: 22px;
+      vertical-align: middle;
+
+      background: #0081cb;
+      color: #fff;
+     }
+
  </style>
   <div id="head"> 
    <!--头部--> 
@@ -169,7 +197,9 @@
 			</p> 
 			<div class="search-vide">
                  <form action="/zfcg" method="get">
-                  <input type="text" class="key" name="title" value="{{$title}}">
+                  <input type="text" class="key" placeholder="按公司名字搜索" name="title" value="{{$title}}"/>
+                  <input type="text" class="key" placeholder="输入起始金额" name="start" value="{{$start}}"/>
+                  <input type="text" class="key" placeholder="输入结束金额" name="end" value="{{$end}}"/>
                   <button type="submit" class="search-btn">搜索</button>
                  </form>
 			</div>
@@ -206,15 +236,15 @@
                 <li>&gt;
                     <span>{{$user->created_at}}</span>
                      @if ($len >$index)
-                      <a href="/zfcg_info/{{$user->id}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
+                      <a href="/zfcg_info/{{$user->uuid}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
                      @else
-                      <a href="/zfcg_info/{{$user->id}}" target="_blank">{{$user->title}}</a>
+                      <a href="/zfcg_info/{{$user->uuid}}" target="_blank">{{$user->title}}</a>
                  @endif
                 </li>
                 @endforeach
            </ul>
            <div style="margin-top:10px">
-               {{$data->render()}}
+               {{$data->appends(['title'=>$title,'start'=>$start,'end'=>$end])->links()}}
            </div>
           </div>
      <?php } ?>
