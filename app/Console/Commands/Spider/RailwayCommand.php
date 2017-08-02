@@ -30,7 +30,6 @@ class RailwayCommand extends Spider
         for ($i = 1; $i <= 3; $i++) {
             if (isset($table[$i]) && count($table[$i]->children()) >=3) {
                 $bidders[] = [
-                    'category' => $this->category,
                     'rank' => trim($table[$i]->child(0)->text()),
                     'company' => trim($table[$i]->child(1)->text()),
                     'price' => trim($table[$i]->child(2)->text())
