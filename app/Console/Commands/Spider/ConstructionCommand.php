@@ -15,6 +15,8 @@ class ConstructionCommand extends Spider
     protected $base = '/sczw/jyfwpt/005001/005001003/MoreInfo.aspx?CategoryNum=005001003';
 
     protected $model = Construction::class;
+    
+    protected $category = '005001003';
 
     protected function digContent($html) 
     {
@@ -27,6 +29,7 @@ class ConstructionCommand extends Spider
         for ($i = 10; $i <= 12; $i++) {
             if (isset($sheet[$i]) && count($sheet[$i]->children()) === 5) {
                 $bidders[] = [
+                    'category' => $this->category,
                     'rank' => trim($sheet[$i]->child(0)->text()), // 名次
                     'company' => trim($sheet[$i]->child(1)->text()), // 公司
                     'quoted_price' => trim($sheet[$i]->child(2)->text()), // 报价
