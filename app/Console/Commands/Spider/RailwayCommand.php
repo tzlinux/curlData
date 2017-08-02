@@ -15,6 +15,8 @@ class RailwayCommand extends Spider
     protected $base = '/sczw/jyfwpt/005003/005003003/MoreInfo.aspx?CategoryNum=005003003';
 
     protected $model = Railway::class;
+    
+    protected $category = '005003003';
 
     protected function digContent($html) 
     {
@@ -28,6 +30,7 @@ class RailwayCommand extends Spider
         for ($i = 1; $i <= 3; $i++) {
             if (isset($table[$i]) && count($table[$i]->children()) >=3) {
                 $bidders[] = [
+                    'category' => $this->category,
                     'rank' => trim($table[$i]->child(0)->text()),
                     'company' => trim($table[$i]->child(1)->text()),
                     'price' => trim($table[$i]->child(2)->text())
