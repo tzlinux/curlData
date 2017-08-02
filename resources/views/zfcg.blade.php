@@ -86,6 +86,7 @@
      .clear{
          clear: both;
      }
+
      .search-vide{
       position: absolute;
       top: 0;
@@ -198,8 +199,14 @@
 			<div class="search-vide">
                  <form action="/zfcg" method="get">
                   <input type="text" class="key" placeholder="按公司名字搜索" name="title" value="{{$title}}"/>
-                  <input type="text" class="key" placeholder="输入起始金额" name="start" value="{{$start}}"/>
-                  <input type="text" class="key" placeholder="输入结束金额" name="end" value="{{$end}}"/>
+                  {{--<input type="text" class="key" placeholder="输入起始金额" name="start" value="{{$start}}"/>--}}
+                  {{--<input type="text" class="key" placeholder="输入结束金额" name="end" value="{{$end}}"/>--}}
+                  <select name="price">
+                   <option <?php echo $price==0 ? 'selected="selected"':'';?> value="0">500万以下</option>
+                   <option <?php echo $price==1 ? 'selected="selected"':'';?> value="1">500万-1000万</option>
+                   <option <?php echo $price==2 ? 'selected="selected"':'';?> value="2">1000万-5000万</option>
+                   <option <?php echo $price==3 ? 'selected="selected"':'';?> value="3">5000万以上</option>
+                  </select>
                   <button type="submit" class="search-btn">搜索</button>
                  </form>
 			</div>
@@ -244,7 +251,7 @@
                 @endforeach
            </ul>
            <div style="margin-top:10px">
-               {{$data->appends(['title'=>$title,'start'=>$start,'end'=>$end])->links()}}
+               {{$data->appends(['title'=>$title,'start'=>'','end'=>''])->links()}}
            </div>
           </div>
      <?php } ?>

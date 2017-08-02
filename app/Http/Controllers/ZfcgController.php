@@ -19,8 +19,8 @@ class ZfcgController extends Controller
     {
         $res = [];
         $title = '';
-        $start = '';
-        $end   = '';
+        $price = '-1';
+
         $input = $input=Request::all();
         if(!empty($input['title'])) {
 
@@ -34,7 +34,7 @@ class ZfcgController extends Controller
                 ->paginate(10);
             $title = $input['title'];
 
-        }elseif((!empty($input['start'])) && (!empty($input['end']))) {
+        }elseif(!empty($input['price'])) {
 
             $value = $request->session()->get('user_name');
             if(empty($value)){
@@ -42,18 +42,55 @@ class ZfcgController extends Controller
                 die;
             }
 
-            $res =DB::table('railways')
-                ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
-                ->whereBetween('bidder.price',[$input['start'],$input['end']])
-                ->paginate(10);
-            $start = $input['start'];
-            $end   = $input['end'];
+            $where = [
+                0 =>['5000000'],
+                1 =>['5000000','10000000'],
+                2 =>['10000000','50000000'],
+                3 =>['5000000'],
+            ];
+
+            switch($input['price']) {
+                case '0':
+
+                    $res =DB::table('railways')
+                        ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
+                        ->where('bidder.price','<',$where[0])
+                        ->paginate(10);
+                    break;
+
+                case '1':
+
+                    $res =DB::table('railways')
+                        ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
+                        ->whereBetween('bidder.price',[$where[1][0],$where[1][1]])
+                        ->paginate(10);
+                    break;
+
+                case '2':
+
+                    $res =DB::table('railways')
+                        ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
+                        ->whereBetween('bidder.price',[$where[2][0],$where[2][1]])
+                        ->paginate(10);
+                    break;
+
+                case '3':
+
+                    $res =DB::table('railways')
+                        ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
+                        ->where('bidder.price','>',$where[3])
+                        ->paginate(10);
+                    break;
+
+            }
+
+            $price = $input['price'];
 
         }else{
             $res = DB::table('railways')->paginate(10);
         }
 
-        return view('zfcg',['data'=>$res,'title'=>$title,'start'=>$start,'end'=>$end]);
+        return view('zfcg',['data'=>$res,'title'=>$title,'price'=>$price]);
     }
 
     public function info(RequestandResponse $request,$id)
