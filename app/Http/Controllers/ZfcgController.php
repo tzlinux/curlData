@@ -44,7 +44,7 @@ class ZfcgController extends Controller
 
             $res =DB::table('railways')
                 ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
-                ->whereBetween('bidder.price',[3,20])
+                ->whereBetween('bidder.price',[$input['start'],$input['end']])
                 ->paginate(10);
             $start = $input['start'];
             $end   = $input['end'];
