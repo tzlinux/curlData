@@ -26,7 +26,7 @@ class RailwayCommand extends Spider
 
         $bidders = [];
         for ($i = 1; $i <= 3; $i++) {
-            if (isset($table[$i]) && count($table[$i]->children()) == 4) {
+            if (isset($table[$i]) && count($table[$i]->children()) >=3) {
                 $bidders[] = [
                     'rank' => trim($table[$i]->child(0)->text()),
                     'company' => trim($table[$i]->child(1)->text()),
@@ -47,7 +47,7 @@ class RailwayCommand extends Spider
                 'bidders' => $bidders
             ];
 
-        \Log::info('Data:', $bid);
+       // \Log::info('Data:', $bid);
 
         return $bid;
     }

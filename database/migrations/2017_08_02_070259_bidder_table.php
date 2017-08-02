@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UserTable1 extends Migration
+class BidderTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class UserTable1 extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('bidder', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
-            $table->string('email')->nullable();
-            $table->string('password')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('r_id')->nullable();
+            $table->string('rank')->nullable();
+            $table->string('company')->nullable();
+            $table->string('price')->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class UserTable1 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+
     }
 }

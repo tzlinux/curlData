@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands\Spider;
 
+use App\Models\Bidder;
 use Exception;
 use DiDom\Document;
 use GuzzleHttp\Pool;
@@ -117,10 +118,23 @@ abstract class Spider extends Command
             'fulfilled' => function ($response, $index) {
                 $html = (string) $response->getBody();
                 $content = $this->digContent($html);
+
                 // 每天连续挖掘会有重复的 按道理来说如果已经存在就应该直接跳出去了 但是呢 Guzzle 会随机返回... 所以暂时先每次都查询一波
                 if (! is_null($content['uuid']) && ! $this->has($content['uuid'])) {
                     try {
                         $c = $this->model()->create($content);
+                        
+                        $bidder = new Bidder();
+                        /*分开录入*/
+                        foreach($content['bidders'] as $k=>$v)
+                        {
+                            $data_arr['r_id']    = $content['uuid'];
+                            $data_arr['rank']    = $v['rank'];
+                            $data_arr['company'] = $v['company'];
+                            $data_arr['price']   = $v['price'];
+                            $bidder->create($data_arr);
+                        }
+
                     } catch (Exception $e) {
 //                        throw new Exception($e->getMessage());
                         \Log::error('Sql Failure: '. $e->getMessage());

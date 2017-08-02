@@ -30,6 +30,6 @@ class MemberTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('constructions');
+        Schema::dropIfExists('member');
     }
 }
