@@ -198,9 +198,34 @@
 			</p> 
 			<div class="search-vide">
                  <form action="/zfcg" method="get">
-                  <input type="text" class="key" placeholder="按公司名字搜索" name="title" value="{{$title}}"/>
+                  {{--<input type="text" class="key" placeholder="按公司名字搜索" name="title" value="{{$title}}"/>--}}
                   {{--<input type="text" class="key" placeholder="输入起始金额" name="start" value="{{$start}}"/>--}}
                   {{--<input type="text" class="key" placeholder="输入结束金额" name="end" value="{{$end}}"/>--}}
+                     <select name="title" id="ContentPlaceHolder1_AreaControl1_ddlCity">
+                         <option value="">—全部—</option>
+                         <option value="成都" <?php echo $title=='成都' ? 'selected="selected"':'' ?>>成都市</option>
+                         <option value="自贡" <?php echo $title=='自贡' ? 'selected="selected"':'' ?>>自贡市</option>
+                         <option value="攀枝花" <?php echo $title=='攀枝花' ? 'selected="selected"':'' ?>>攀枝花市</option>
+                         <option value="泸州" <?php echo $title=='泸州' ? 'selected="selected"':'' ?>>泸州市</option>
+                         <option value="德阳" <?php echo $title=='德阳' ? 'selected="selected"':'' ?>>德阳市</option>
+                         <option value="绵阳" <?php echo $title=='绵阳' ? 'selected="selected"':'' ?>>绵阳市</option>
+                         <option value="广元" <?php echo $title=='广元' ? 'selected="selected"':'' ?>>广元市</option>
+                         <option value="遂宁" <?php echo $title=='遂宁' ? 'selected="selected"':'' ?>>遂宁市</option>
+                         <option value="内江" <?php echo $title=='内江' ? 'selected="selected"':'' ?>>内江市</option>
+                         <option value="乐山" <?php echo $title=='乐山' ? 'selected="selected"':'' ?>>乐山市</option>
+                         <option value="南充" <?php echo $title=='南充' ? 'selected="selected"':'' ?>>南充市</option>
+                         <option value="眉山" <?php echo $title=='眉山' ? 'selected="selected"':'' ?>>眉山市</option>
+                         <option value="宜宾" <?php echo $title=='宜宾' ? 'selected="selected"':'' ?>>宜宾市</option>
+                         <option value="广安" <?php echo $title=='广安' ? 'selected="selected"':'' ?>>广安市</option>
+                         <option value="达州" <?php echo $title=='达州' ? 'selected="selected"':'' ?>>达州市</option>
+                         <option value="雅安" <?php echo $title=='雅安' ? 'selected="selected"':'' ?>>雅安市</option>
+                         <option value="巴中" <?php echo $title=='巴中' ? 'selected="selected"':'' ?>>巴中市</option>
+                         <option value="资阳" <?php echo $title=='资阳' ? 'selected="selected"':'' ?>>资阳市</option>
+                         <option value="阿坝藏族羌族自治州" <?php echo $title=='阿坝' ? 'selected="selected"':'' ?>>阿坝藏族羌族自治州</option>
+                         <option value="甘孜藏族自治州" <?php echo $title=='甘孜' ? 'selected="selected"':'' ?>>甘孜藏族自治州</option>
+                         <option value="凉山彝族自治州" <?php echo $title=='凉山' ? 'selected="selected"':'' ?>>凉山彝族自治州</option>
+
+                     </select>
                   <select name="price">
                    <option <?php echo $price==0 ? 'selected="selected"':'';?> value="0">500万以下</option>
                    <option <?php echo $price==1 ? 'selected="selected"':'';?> value="1">500万-1000万</option>

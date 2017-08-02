@@ -86,6 +86,33 @@
      .clear{
          clear: both;
      }
+     .search-vide{
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 440px;
+         bottom: 0;
+         margin: auto auto;
+         font-size: 0;
+     }
+     .search-vide .key{
+         width: 104px;
+         height: 20px;
+         vertical-align: middle;
+         border: 1px solid #8bb9b4;
+         text-indent: 0.5em;
+         display: inline-block;
+         margin-left: 10px;
+     }
+     .search-vide .search-btn{
+         width: 30px;
+         height: 22px;
+         line-height: 22px;
+         vertical-align: middle;
+
+         background: #0081cb;
+         color: #fff;
+     }
  </style>
   <div id="head"> 
    <!--头部--> 
@@ -169,8 +196,38 @@
 			</p> 
 			<div class="search-vide">
 				<form action="/gcjs" method="get">
-					<input type="text" class="key" name="title" value="{{$title}}">
-					<button type="submit" class="search-btn">搜索</button>
+                    <select name="title" id="ContentPlaceHolder1_AreaControl1_ddlCity">
+                        <option value="">—全部—</option>
+                        <option value="成都" <?php echo $title=='成都' ? 'selected="selected"':'' ?>>成都市</option>
+                        <option value="自贡" <?php echo $title=='自贡' ? 'selected="selected"':'' ?>>自贡市</option>
+                        <option value="攀枝花" <?php echo $title=='攀枝花' ? 'selected="selected"':'' ?>>攀枝花市</option>
+                        <option value="泸州" <?php echo $title=='泸州' ? 'selected="selected"':'' ?>>泸州市</option>
+                        <option value="德阳" <?php echo $title=='德阳' ? 'selected="selected"':'' ?>>德阳市</option>
+                        <option value="绵阳" <?php echo $title=='绵阳' ? 'selected="selected"':'' ?>>绵阳市</option>
+                        <option value="广元" <?php echo $title=='广元' ? 'selected="selected"':'' ?>>广元市</option>
+                        <option value="遂宁" <?php echo $title=='遂宁' ? 'selected="selected"':'' ?>>遂宁市</option>
+                        <option value="内江" <?php echo $title=='内江' ? 'selected="selected"':'' ?>>内江市</option>
+                        <option value="乐山" <?php echo $title=='乐山' ? 'selected="selected"':'' ?>>乐山市</option>
+                        <option value="南充" <?php echo $title=='南充' ? 'selected="selected"':'' ?>>南充市</option>
+                        <option value="眉山" <?php echo $title=='眉山' ? 'selected="selected"':'' ?>>眉山市</option>
+                        <option value="宜宾" <?php echo $title=='宜宾' ? 'selected="selected"':'' ?>>宜宾市</option>
+                        <option value="广安" <?php echo $title=='广安' ? 'selected="selected"':'' ?>>广安市</option>
+                        <option value="达州" <?php echo $title=='达州' ? 'selected="selected"':'' ?>>达州市</option>
+                        <option value="雅安" <?php echo $title=='雅安' ? 'selected="selected"':'' ?>>雅安市</option>
+                        <option value="巴中" <?php echo $title=='巴中' ? 'selected="selected"':'' ?>>巴中市</option>
+                        <option value="资阳" <?php echo $title=='资阳' ? 'selected="selected"':'' ?>>资阳市</option>
+                        <option value="阿坝藏族羌族自治州" <?php echo $title=='阿坝' ? 'selected="selected"':'' ?>>阿坝藏族羌族自治州</option>
+                        <option value="甘孜藏族自治州" <?php echo $title=='甘孜' ? 'selected="selected"':'' ?>>甘孜藏族自治州</option>
+                        <option value="凉山彝族自治州" <?php echo $title=='凉山' ? 'selected="selected"':'' ?>>凉山彝族自治州</option>
+
+                    </select>
+                    <select name="price">
+                        <option <?php echo $price==0 ? 'selected="selected"':'';?> value="0">500万以下</option>
+                        <option <?php echo $price==1 ? 'selected="selected"':'';?> value="1">500万-1000万</option>
+                        <option <?php echo $price==2 ? 'selected="selected"':'';?> value="2">1000万-5000万</option>
+                        <option <?php echo $price==3 ? 'selected="selected"':'';?> value="3">5000万以上</option>
+                    </select>
+                    <button type="submit" class="search-btn">搜索</button>
 				</form>
 			</div>
 		</div>
@@ -206,15 +263,15 @@
                     <span>{{$user->created_at}}</span>
                     <?php $len = mb_strlen($user->title); $index=33; ?>
                      @if ($len >$index)
-                      <a href="/gcjs_info/{{$user->id}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
+                      <a href="/gcjs_info/{{$user->uuid}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
                      @else
-                      <a href="/gcjs_info/{{$user->id}}" target="_blank">{{$user->title}}</a>
+                      <a href="/gcjs_info/{{$user->uuid}}" target="_blank">{{$user->title}}</a>
                      @endif
                 </li>
                 @endforeach
            </ul>
            <div style="margin-top:10px">
-               {{$data->render()}}
+               {{$data->appends(['title'=>$title,'price'=>$price])->links()}}
            </div>
           </div>
      <?php } ?>
