@@ -272,7 +272,7 @@
                 @endforeach
            </ul>
            <div style="margin-top:10px">
-               {{$data->appends(['title'=>$title,'price'=>$price])->links()}}
+               {{$data->appends(['title'=>$title,'price'=>$price,'acode'=>$acode])->links()}}
            </div>
           </div>
      <?php } ?>
