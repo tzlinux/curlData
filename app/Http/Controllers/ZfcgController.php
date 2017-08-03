@@ -50,19 +50,11 @@ class ZfcgController extends Controller
             ];
 
             switch($input['price']) {
-                case '0':
-
-                    $res =DB::table('railways')
-                        ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
-                        ->where('bidder.price','<',$where[0])
-                        ->paginate(10);
-                    break;
-
                 case '1':
 
                     $res =DB::table('railways')
                         ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
-                        ->whereBetween('bidder.price',[$where[1][0],$where[1][1]])
+                        ->where([['bidder.price','<',$where[0]],['bidder.category','=','005003003']])
                         ->paginate(10);
                     break;
 
@@ -70,7 +62,8 @@ class ZfcgController extends Controller
 
                     $res =DB::table('railways')
                         ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
-                        ->whereBetween('bidder.price',[$where[2][0],$where[2][1]])
+                        ->where('bidder.category','=','005003003')
+                        ->whereBetween('bidder.price',[$where[1][0],$where[1][1]])
                         ->paginate(10);
                     break;
 
@@ -78,14 +71,22 @@ class ZfcgController extends Controller
 
                     $res =DB::table('railways')
                         ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
-                        ->where('bidder.price','>',$where[3])
+                        ->where('bidder.category','=','005003003')
+                        ->whereBetween('bidder.price',[$where[2][0],$where[2][1]])
+                        ->paginate(10);
+                    break;
+
+                case '4':
+
+                    $res =DB::table('railways')
+                        ->leftJoin('bidder','railways.uuid','=','bidder.r_id')
+                        ->where([['bidder.price','>',$where[0]],['bidder.category','=','005003003']])
                         ->paginate(10);
                     break;
 
             }
 
             $price = $input['price'];
-
         }else{
             $res = DB::table('railways')->paginate(10);
         }

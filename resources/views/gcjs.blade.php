@@ -222,10 +222,11 @@
 
                     </select>
                     <select name="price">
-                        <option <?php echo $price==0 ? 'selected="selected"':'';?> value="0">500万以下</option>
-                        <option <?php echo $price==1 ? 'selected="selected"':'';?> value="1">500万-1000万</option>
-                        <option <?php echo $price==2 ? 'selected="selected"':'';?> value="2">1000万-5000万</option>
-                        <option <?php echo $price==3 ? 'selected="selected"':'';?> value="3">5000万以上</option>
+                        <option <?php echo $price==0 ? 'selected="selected"':'';?> value="0">—全部—</option>
+                        <option <?php echo $price==1 ? 'selected="selected"':'';?> value="1">500万以下</option>
+                        <option <?php echo $price==2 ? 'selected="selected"':'';?> value="2">500万-1000万</option>
+                        <option <?php echo $price==3 ? 'selected="selected"':'';?> value="3">1000万-5000万</option>
+                        <option <?php echo $price==4 ? 'selected="selected"':'';?> value="4">5000万以上</option>
                     </select>
                     <button type="submit" class="search-btn">搜索</button>
 				</form>
