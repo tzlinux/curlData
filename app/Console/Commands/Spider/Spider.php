@@ -122,6 +122,26 @@ abstract class Spider extends Command
                 // 每天连续挖掘会有重复的 按道理来说如果已经存在就应该直接跳出去了 但是呢 Guzzle 会随机返回... 所以暂时先每次都查询一波
                 if (! is_null($content['uuid']) && ! $this->has($content['uuid'])) {
                     try {
+                        $a = '阳';
+                        $b = '眉';
+
+                        $exp = explode('-',$content['owner_contact']);
+                        $content['acode'] = $exp[0];
+
+                        if($content['acode'] == '028')
+                        {
+                            if(strpos($content['ifb_address'],$a) !== false)
+                            {
+                                $content['acode'] = '0281';
+                            }
+
+                            if(strpos($content['ifb_address'],$b) !== false)
+                            {
+                                $content['acode'] = '0282';
+                            }
+                        }
+
+
                         $bid = $this->model()->create($content);
                         /*分开录入*/
                         $model = new Bidder();

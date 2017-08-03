@@ -10,85 +10,116 @@ use Illuminate\Http\Request as RequestandResponse;
 
 Class GcjsController extends Controller
 {
+    public $address = [
+            '028'  => '成都',
+            '0813' => '自贡',
+            '0812' => '攀枝花',
+            '0830' => '泸州市',
+            '0838' => '德阳市',
+            '0816' => '绵阳市',
+            '0839' => '广元市',
+            '0825' => '遂宁市',
+            '0832' => '内江市',
+            '0833' => '乐山市',
+            '0817' => '南充市',
+//            '028'  => '眉山市',
+            '0831' => '宜宾市',
+            '0826' => '广安市',
+            '0818' => '达州市',
+            '0835' => '雅安市',
+            '0827' => '巴中市',
+//            '028'  => '资阳市',
+            '0837' => '阿坝藏族羌族自治州',
+            '0836' => '甘孜藏族自治州',
+            '0834' => '凉山彝族自治州'
+        ];
+
     public function index(RequestandResponse $request)
     {
 
-        $res = [];
-        $title = '';
-        $price = '-1';
-
         $input = $input=Request::all();
-        if(!empty($input['title'])) {
+        $title = isset($input['title']) ? $input['title'] : '';
+        $price = isset($input['price']) ? $input['price'] : '';
+        $acode = isset($input['acode']) ? $input['acode'] : '';
+
+        $res = DB::table('constructions');
+
+        if((!empty($input['title'])) || (!empty($input['price'])) || (!empty($input['acode']))) {
 
             $value = $request->session()->get('user_name');
-            if(empty($value)){
-                return view('yanz');
-                die;
-            }
-            $res =DB::table('constructions')
-                ->where('title', 'like', '%'.$input['title'].'%')
-                ->paginate(10);
-            $title = $input['title'];
-
-        }elseif(!empty($input['price'])) {
-
-            $value = $request->session()->get('user_name');
-            if(empty($value)){
+            if(empty($value))
+            {
                 return view('yanz');
                 die;
             }
 
-            $where = [
-                0 =>['5000000'],
-                1 =>['5000000','10000000'],
-                2 =>['10000000','50000000'],
-                3 =>['5000000'],
-            ];
+            //按地区查
+            if(!empty($input['acode']))
+            {
+                $res = DB::table('constructions')->where('acode','=',$input['acode']);
+                $condition2 = '四';
+                $result = $res->get()->toArray();
 
-            switch($input['price']) {
-                case '1':
+                //匹配数据，如果是四川省公共资源的就按区号查，否则就用开标地点查
+                foreach($result as $key => $value)
+                {
+                    if(strpos($value->ifb_address,$condition2))
+                    {
+                        $res->where('acode', '=',$input['acode']);
+                    }else{
+                        $res->where('ifb_address', 'like', '%'.$input['title'].'%');
+                    }
+                }
+            }
 
-                    $res =DB::table('constructions')
-                        ->leftJoin('bidder','constructions.uuid','=','bidder.r_id')
-                        ->where([['bidder.price','<',$where[0]],['bidder.category','=','005001003']])
-                        ->paginate(10);
-                    break;
+            //按招标项目title查询
+            if(!empty($input['title']))
+            {
+                $res->where('title', 'like', '%'.$input['title'].'%');
+            }
 
-                case '2':
+            //按价格查询
+            if(!empty($input['price']))
+            {
+                $where = [
+                    0 =>['5000000'],
+                    1 =>['5000000','10000000'],
+                    2 =>['10000000','50000000'],
+                    3 =>['5000000'],
+                ];
 
-                    $res =DB::table('constructions')
-                        ->leftJoin('bidder','constructions.uuid','=','bidder.r_id')
-                        ->where('bidder.category','=','005001003')
-                        ->whereBetween('bidder.price',[$where[1][0],$where[1][1]])
-                        ->paginate(10);
-                    break;
+                switch($input['price']) {
 
-                case '3':
+                    case '1':
+                        $res->leftJoin('bidder','constructions.uuid','=','bidder.r_id');
+                        $res->where([['bidder.price','<',$where[0]],['bidder.category','=','005001003']]);
+                        break;
 
-                    $res =DB::table('constructions')
-                        ->leftJoin('bidder','constructions.uuid','=','bidder.r_id')
-                        ->where('bidder.category','=','005001003')
-                        ->whereBetween('bidder.price',[$where[2][0],$where[2][1]])
-                        ->paginate(10);
-                    break;
+                    case '2':
+                        $res->leftJoin('bidder','constructions.uuid','=','bidder.r_id');
+                        $res->where('bidder.category','=','005001003');
+                        $res->whereBetween('bidder.price',[$where[1][0],$where[1][1]]);
+                        break;
 
-                case '4':
+                    case '3':
+                        $res->leftJoin('bidder','constructions.uuid','=','bidder.r_id');
+                        $res->where('bidder.category','=','005001003');
+                        $res->whereBetween('bidder.price',[$where[2][0],$where[2][1]]);
+                        break;
 
-                    $res =DB::table('constructions')
-                        ->leftJoin('bidder','constructions.uuid','=','bidder.r_id')
-                        ->where([['bidder.price','>',$where[3]],['bidder.category','=','005001003']])
-                        ->paginate(10);
-                    break;
+                    case '4':
+                        $res->leftJoin('bidder','constructions.uuid','=','bidder.r_id');
+                        $res->where([['bidder.price','>',$where[3]],['bidder.category','=','005001003']]);
+                        break;
+
+                }
 
             }
 
-            $price = $input['price'];
-
-        }else{
-            $res = DB::table('constructions')->paginate(10);
         }
 
-        return view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price]);
+        $res = $res->paginate(10);
+        return view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode]);
     }
 
     public function info(RequestandResponse $request,$id)

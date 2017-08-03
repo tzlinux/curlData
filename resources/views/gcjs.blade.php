@@ -196,30 +196,30 @@
 			</p> 
 			<div class="search-vide">
 				<form action="/gcjs" method="get">
-                    <select name="title" id="ContentPlaceHolder1_AreaControl1_ddlCity">
+                    <input name="title" placeholder="输入招标项目名称" value="{{$title}}"/>
+                    <select name="acode">
                         <option value="">—全部—</option>
-                        <option value="成都" <?php echo $title=='成都' ? 'selected="selected"':'' ?>>成都市</option>
-                        <option value="自贡" <?php echo $title=='自贡' ? 'selected="selected"':'' ?>>自贡市</option>
-                        <option value="攀枝花" <?php echo $title=='攀枝花' ? 'selected="selected"':'' ?>>攀枝花市</option>
-                        <option value="泸州" <?php echo $title=='泸州' ? 'selected="selected"':'' ?>>泸州市</option>
-                        <option value="德阳" <?php echo $title=='德阳' ? 'selected="selected"':'' ?>>德阳市</option>
-                        <option value="绵阳" <?php echo $title=='绵阳' ? 'selected="selected"':'' ?>>绵阳市</option>
-                        <option value="广元" <?php echo $title=='广元' ? 'selected="selected"':'' ?>>广元市</option>
-                        <option value="遂宁" <?php echo $title=='遂宁' ? 'selected="selected"':'' ?>>遂宁市</option>
-                        <option value="内江" <?php echo $title=='内江' ? 'selected="selected"':'' ?>>内江市</option>
-                        <option value="乐山" <?php echo $title=='乐山' ? 'selected="selected"':'' ?>>乐山市</option>
-                        <option value="南充" <?php echo $title=='南充' ? 'selected="selected"':'' ?>>南充市</option>
-                        <option value="眉山" <?php echo $title=='眉山' ? 'selected="selected"':'' ?>>眉山市</option>
-                        <option value="宜宾" <?php echo $title=='宜宾' ? 'selected="selected"':'' ?>>宜宾市</option>
-                        <option value="广安" <?php echo $title=='广安' ? 'selected="selected"':'' ?>>广安市</option>
-                        <option value="达州" <?php echo $title=='达州' ? 'selected="selected"':'' ?>>达州市</option>
-                        <option value="雅安" <?php echo $title=='雅安' ? 'selected="selected"':'' ?>>雅安市</option>
-                        <option value="巴中" <?php echo $title=='巴中' ? 'selected="selected"':'' ?>>巴中市</option>
-                        <option value="资阳" <?php echo $title=='资阳' ? 'selected="selected"':'' ?>>资阳市</option>
-                        <option value="阿坝藏族羌族自治州" <?php echo $title=='阿坝' ? 'selected="selected"':'' ?>>阿坝藏族羌族自治州</option>
-                        <option value="甘孜藏族自治州" <?php echo $title=='甘孜' ? 'selected="selected"':'' ?>>甘孜藏族自治州</option>
-                        <option value="凉山彝族自治州" <?php echo $title=='凉山' ? 'selected="selected"':'' ?>>凉山彝族自治州</option>
-
+                        <option value="028" <?php echo $acode=='028' ? 'selected="selected"':'' ?>>成都市</option>
+                        <option value="0813" <?php echo $acode=='0813' ? 'selected="selected"':'' ?>>自贡市</option>
+                        <option value="0812" <?php echo $acode=='0812' ? 'selected="selected"':'' ?>>攀枝花市</option>
+                        <option value="0830" <?php echo $acode=='0830' ? 'selected="selected"':'' ?>>泸州市</option>
+                        <option value="0838" <?php echo $acode=='0838' ? 'selected="selected"':'' ?>>德阳市</option>
+                        <option value="0816" <?php echo $acode=='0816' ? 'selected="selected"':'' ?>>绵阳市</option>
+                        <option value="0839" <?php echo $acode=='0839' ? 'selected="selected"':'' ?>>广元市</option>
+                        <option value="0825" <?php echo $acode=='0825' ? 'selected="selected"':'' ?>>遂宁市</option>
+                        <option value="0832" <?php echo $acode=='0832' ? 'selected="selected"':'' ?>>内江市</option>
+                        <option value="0833" <?php echo $acode=='0833' ? 'selected="selected"':'' ?>>乐山市</option>
+                        <option value="0817" <?php echo $acode=='0817' ? 'selected="selected"':'' ?>>南充市</option>
+                        <option value="0282" <?php echo $acode=='0282' ? 'selected="selected"':'' ?>>眉山市</option>
+                        <option value="0831" <?php echo $acode=='0831' ? 'selected="selected"':'' ?>>宜宾市</option>
+                        <option value="0826" <?php echo $acode=='0826' ? 'selected="selected"':'' ?>>广安市</option>
+                        <option value="0818" <?php echo $acode=='0818' ? 'selected="selected"':'' ?>>达州市</option>
+                        <option value="0835" <?php echo $acode=='0835' ? 'selected="selected"':'' ?>>雅安市</option>
+                        <option value="0827" <?php echo $acode=='0827' ? 'selected="selected"':'' ?>>巴中市</option>
+                        <option value="0281" <?php echo $acode=='0281' ? 'selected="selected"':'' ?>>资阳市</option>
+                        <option value="0837" <?php echo $acode=='0837' ? 'selected="selected"':'' ?>>阿坝藏族羌族自治州</option>
+                        <option value="0836" <?php echo $acode=='0836' ? 'selected="selected"':'' ?>>甘孜藏族自治州</option>
+                        <option value="0834" <?php echo $acode=='0834' ? 'selected="selected"':'' ?>>凉山彝族自治州</option>
                     </select>
                     <select name="price">
                         <option <?php echo $price==0 ? 'selected="selected"':'';?> value="0">—全部—</option>
