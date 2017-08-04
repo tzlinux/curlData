@@ -21,13 +21,13 @@
 
 
 
-<link rel="stylesheet" type="text/css" href="/h5/css/fontsIco.min.css">
-<link rel="stylesheet" type="text/css" href="/h5/css/base.min.css" title="default">
-<link rel="stylesheet" type="text/css" href="/h5/css/bannerAnimation.min.css" title="">
+<link rel="stylesheet" type="text/css" href="/h5/fontsIco.min.css">
+<link rel="stylesheet" type="text/css" href="/h5/base.min.css" title="default">
+<link rel="stylesheet" type="text/css" href="/h5/bannerAnimation.min.css" title="">
 
-<link rel="stylesheet" id="mobiStyleTemplateCss" type="text/css" href="/h5/css/1004_2.min.css">
+<link rel="stylesheet" id="mobiStyleTemplateCss" type="text/css" href="/h5/1004_2.min.css">
 
-<link rel="stylesheet" id="mobiCubeNavigationCss" type="text/css" href="h5/css/cubeNavigation.min.css">
+<link rel="stylesheet" id="mobiCubeNavigationCss" type="text/css" href="h5/cubeNavigation.min.css">
 
 
 
@@ -432,13 +432,13 @@ if(g_webWidth == 0){
 
 
 
-<script type="text/javascript" charset="utf-8" src="./四川招标项目网_files/jqmobi.min.js.下载"></script>
-<script type="text/javascript" charset="utf-8" src="./四川招标项目网_files/jqmobi_ui.min.js.下载"></script>
-<script id="mobiOperationJS" type="text/javascript" charset="utf-8" src="./四川招标项目网_files/mobi.min.js.下载"></script>
+<script type="text/javascript" charset="utf-8" src="/js/h5/jqmobi.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="/js/h5/jqmobi_ui.min.js"></script>
+<script id="mobiOperationJS" type="text/javascript" charset="utf-8" src="/js/h5/mobi.min.js"></script>
 
 
 
-<script type="text/javascript" src="./四川招标项目网_files/2052.min.js.下载"></script>
+<script type="text/javascript" src="/js/h5/2052.min.js"></script>
 
 
 
