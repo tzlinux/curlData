@@ -119,7 +119,13 @@ Class GcjsController extends Controller
         }
 
         $res = $res->paginate(10);
-        return view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode]);
+        //判断是否移动端
+        if (isset ($_SERVER['HTTP_X_WAP_PROFILE'])){
+            echo '手机设备';
+        }else{
+            return view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode]);
+        }
+
     }
 
     public function info(RequestandResponse $request,$id)
