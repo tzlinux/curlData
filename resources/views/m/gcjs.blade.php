@@ -27,7 +27,7 @@
 
 <link rel="stylesheet" id="mobiStyleTemplateCss" type="text/css" href="/css/h5/1004_2.min.css">
 
-<link rel="stylesheet" id="mobiCubeNavigationCss" type="text/css" href="/css/cubeNavigation.min.css">
+<link rel="stylesheet" id="mobiCubeNavigationCss" type="text/css" href="/css/h5/cubeNavigation.min.css">
 
 
 
