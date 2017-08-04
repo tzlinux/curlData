@@ -58,7 +58,7 @@ class ConstructionCommand extends Spider
                 'bidders' => $bidders // 中标信息
             ];
 
-            \Log::info('Data:', $bid);
+           // \Log::info('Data:', $bid);
 
             return $bid;
         }

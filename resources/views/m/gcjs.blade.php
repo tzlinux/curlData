@@ -299,7 +299,17 @@ var _htmlFontSize = (function(){
 <div id="module302" class="form Handle  formStyle6 " _autoheight="1" _height="0" _bheight="0" _intab="0" style="margin-top: 0.59375rem;"><div _bannerautoheight="1" class="formBannerTitle formBannerTitle302" style="height: 1.5rem;"><div class="titleLeft titleLeft302">
 </div>
 <div class="titleCenter titleCenter302">
-<div class="titleText titleText302"><div class="titleTextIcon icon-titleText">&nbsp;</div><div class="textContent">公司动态</div></div><div class="formBannerMore formBannerMore302"><a class="titleMoreLink titleMoreLink302" href="http://m.bc13824986.icoc.me/nr.jsp?moduleId=302"><span class="titleMoreIcon icon-titleMore titleMoreIcon302">&nbsp;</span><span class="titleMore titleMore302">更多</span></a></div></div>
+<div class="titleText titleText302">
+	<div class="titleTextIcon icon-titleText">&nbsp;
+	</div>
+	<div class="textContent">公司动态</div>
+</div>
+	<div class="formBannerMore formBannerMore302">
+{{--		<a class="titleMoreLink titleMoreLink302" href="http://m.bc13824986.icoc.me/nr.jsp?moduleId=302"><span class="titleMoreIcon icon-titleMore titleMoreIcon302">&nbsp;</span>
+			<span class="titleMore titleMore302">更多</span>
+		</a>--}}
+	</div>
+</div>
 <div class="titleRight titleRight302">
 </div>
 </div>
@@ -309,25 +319,29 @@ var _htmlFontSize = (function(){
 <div class="formMiddleContent formMiddleContent302 moduleContent" _innertype="0" style="margin-bottom: 0.5rem;"><div class="newsList " id="newsList302">
 <div id="newsLine5" topclassname="top1" topswitch="on" newsid="5" newsname="2016城市卖地收入排行榜 多城土地收入创纪录" class="newsLine line icon-gline   firstClass  wholeLine J_lineH j-lineH">
 <div id="lineBody5" class="lineBody lineBodyTable">
-<div class="linkTableCell"><div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=5&amp;groupId=0&amp;typeList=%5B%5D" target="_self">2016城市卖地收入排行榜 多城土地收入创纪录</a></div></div>
+<div class="linkTableCell"><div class="linkTable">
+		{{--<a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=5&amp;groupId=0&amp;typeList=%5B%5D" target="_self">2016城市卖地收入排行榜 多城土地收入创纪录</a></div></div>--}}
 </div>
 </div>
 <div class="g_separator separatorLine"></div>
 <div id="newsLine4" topclassname="top1" topswitch="on" newsid="4" newsname="去年楼市去库存效果明显 部分城市转入补库存阶段" class="newsLine line icon-gline     wholeLine J_lineH j-lineH">
 <div id="lineBody4" class="lineBody lineBodyTable">
-<div class="linkTableCell"><div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=4&amp;groupId=0&amp;typeList=%5B%5D" target="_self">去年楼市去库存效果明显 部分城市转入补库存阶段</a></div></div>
+<div class="linkTableCell">
+	{{--<div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=4&amp;groupId=0&amp;typeList=%5B%5D" target="_self">去年楼市去库存效果明显 部分城市转入补库存阶段</a></div></div>--}}
 </div>
 </div>
 <div class="g_separator separatorLine"></div>
 <div id="newsLine3" topclassname="top1" topswitch="on" newsid="3" newsname="受益于房价上涨 逾7成上市房企报喜" class="newsLine line icon-gline     wholeLine J_lineH j-lineH">
 <div id="lineBody3" class="lineBody lineBodyTable">
-<div class="linkTableCell"><div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=3&amp;groupId=0&amp;typeList=%5B%5D" target="_self">受益于房价上涨 逾7成上市房企报喜</a></div></div>
+<div class="linkTableCell">
+	{{--<div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=3&amp;groupId=0&amp;typeList=%5B%5D" target="_self">受益于房价上涨 逾7成上市房企报喜</a></div></div>--}}
 </div>
 </div>
 <div class="g_separator separatorLine"></div>
 <div id="newsLine2" topclassname="top1" topswitch="on" newsid="2" newsname="去年楼市去库存效果明显 部分城市转入补库存阶段" class="newsLine line icon-gline     lastClass wholeLine J_lineH j-lineH">
 <div id="lineBody2" class="lineBody lineBodyTable">
-<div class="linkTableCell"><div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=2&amp;groupId=0&amp;typeList=%5B%5D" target="_self">去年楼市去库存效果明显 部分城市转入补库存阶段</a></div></div>
+<div class="linkTableCell">
+	{{--<div class="linkTable"><a hidefocus="true" href="http://m.bc13824986.icoc.me/nd.jsp?mid=302&amp;id=2&amp;groupId=0&amp;typeList=%5B%5D" target="_self">去年楼市去库存效果明显 部分城市转入补库存阶段</a></div></div>--}}
 </div>
 </div>
 <div class="g_separator separatorLine"></div>
@@ -344,7 +358,8 @@ var _htmlFontSize = (function(){
 			
 			
 			<div id="webFooter" class="webFooter moveAnimation">
-			<div id="footer" class="footer mallThemeFooter"><div class="bottomdiv"><div class="bottom"><div class="backtop" onclick="Mobi.scrollToTop(&quot;webContainerBox&quot;)">top<b></b></div></div></div><div class="technical"><div class="technicalSupport footerInfo"><font face="Arial">©</font>2017&nbsp;-&nbsp;版权所有</div><div class="technicalSupport"><a href="http://mjz.faisco.com/?_ta=2508" target="_blank" hidefocus="true">本站使用&nbsp;<span class="faisco-icons-logo"></span>凡科建站&nbsp;搭建</a>       <span class="footerSep PcVer">|</span><a class="PcVer" href="http://www.bc13824986.icoc.me/?_siteUrl" target="_blank" hidefocus="true">电脑版</a><span class="footerSep PcVer">|</span><a class="rep PcVer" href="http://m.faisco.com/ts.jsp?acct=bc13824986" target="_blank" hidefocus="true">举报</a></div></div></div>
+			<div id="footer" class="footer mallThemeFooter">
+				<div class="bottomdiv"><div class="bottom"><div class="backtop" onclick="Mobi.scrollToTop(&quot;webContainerBox&quot;)">top<b></b></div></div></div><div class="technical"><div class="technicalSupport footerInfo"><font face="Arial">©</font>2017&nbsp;-&nbsp;版权所有</div><div class="technicalSupport"><a href="http://mjz.faisco.com/?_ta=2508" target="_blank" hidefocus="true">本站使用&nbsp;<span class="faisco-icons-logo"></span>凡科建站&nbsp;搭建</a>       <span class="footerSep PcVer">|</span><a class="PcVer" href="http://www.bc13824986.icoc.me/?_siteUrl" target="_blank" hidefocus="true">电脑版</a><span class="footerSep PcVer">|</span><a class="rep PcVer" href="http://m.faisco.com/ts.jsp?acct=bc13824986" target="_blank" hidefocus="true">举报</a></div></div></div>
 				
 <div id="mobiAdvertisement_box" class="mobiAdvertisement_box" style="display: block;">
 

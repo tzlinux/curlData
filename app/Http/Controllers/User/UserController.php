@@ -29,4 +29,18 @@ class UserController extends Controller
         $request->session()->flush();
         return redirect('/gcjs');
     }
+
+    public function guestbook(RequestandResponse $request)
+    {
+        $input = $input=Request::all();
+        $res  = DB::table('guestbook')->insert([
+                'ip'       => $request->getClientIp(),
+                'email'    => $input['email'],
+                'useranme' => $input['username'],
+                'phone'    => $input['phone'],
+                'title'    => $input['title'],
+                'content'  => $input['content'],
+            ]);
+        return view('m.guestbook',['data'=>$res]);
+    }
 }

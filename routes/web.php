@@ -35,8 +35,11 @@ Route::get('/user_list','user\UserController@user_list');
 Route::get('/clear','user\UserController@clear');
 Route::get('/yanz','user\UserController@clear');
 
+/*
+ * 留言
+ * */
 
-
+Route::get('/guestbook','user/UserController@guestbook');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
