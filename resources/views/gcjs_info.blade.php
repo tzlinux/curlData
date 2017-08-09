@@ -178,10 +178,10 @@
          </table>
         </div>
        </div>
-       <div class="fy" style="margin:20px 0 10px 0">
+   {{--    <div class="fy" style="margin:20px 0 10px 0">
         上一篇：
         <a href="company_news/627.html">深圳国技仪器有限公司热烈祝贺中国环境保护产业协会 第五次会员代表大会圆满完成</a> 下一篇：没有了
-       </div> 
+       </div> --}}
       </ul> 
      </div> 
     </div> 
