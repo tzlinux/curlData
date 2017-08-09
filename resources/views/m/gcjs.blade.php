@@ -109,6 +109,62 @@
 <!-- 输出底部样式 -->
 <style id="fixedAreaBoxStyle">
 </style>
+<style type="text/css">
+	
+ul.newsList {
+	list-style: none;
+	-webkit-padding-start: 10px;
+}
+ul.newsList li {
+    padding: 10px 0px 5px 0px;
+    border-bottom-style: dotted;
+    border-bottom-width: 1px;
+}
+ul.pagination {
+    list-style: none;
+    -webkit-padding-start: 0px;
+    text-align: center;
+}
+ul.pagination li {
+    display: -webkit-inline-box;
+    padding: 4px;
+}
+ul.select108{
+	 list-style: none;
+	 -webkit-padding-start: 0px;
+}
+ul.select108 li{
+	text-align: center;
+	line-height: 3;
+}
+ul.select108 li a{
+	color: #faffff;
+}
+#select108{
+	position: absolute;
+	display: none;
+	background-color: #b50100;
+}
+.search-form-box{
+	margin-top: 10px;
+	vertical-align: text-bottom;
+}
+.search-form-box input{
+	width: 30%;
+	line-height: 21px;
+}
+.search-form-box select{
+	width: 25%;
+	height: 28px;;
+}
+.search-form-box select option{
+	height: 28px;;
+}
+.search-form-box button{
+	width: 15%;
+	height: 28px;
+}
+</style>
 <!-- 系统特殊隐藏栏目隐藏头部、banner -->
 </head>
 <body faiscomobi="true" id="g_body" class="g_locale2052 mobiCol3">
@@ -126,6 +182,24 @@ var _htmlFontSize = (function(){
     document.documentElement.style.fontSize = clientWidth * 1/16+"px";
   	return clientWidth * 1/16;
 })();
+
+
+</script>
+<script type="text/javascript">
+	function showTips(_this){
+		var w = _this.clientWidth;
+		var tips = document.getElementById("select108");
+		var display = tips.style.display;
+		if(display=="block"){
+			tips.style.display  = "none";
+			return;
+		}
+		tips.style.width = w+"px";
+		tips.style.left  = _this.offsetLeft+"px";
+		tips.style.display  = "block";
+			
+	}
+	
 </script>
 <div id="webTips" class="webTips jz-webTips">
 	<div id="mobitips" class="mobitips">
@@ -227,6 +301,20 @@ var _htmlFontSize = (function(){
 				</div>
 			</div>
 		</div>
+		<!--公司简介左边内容-->
+			
+		<div id="select108" class="abNav">
+			<ul class="select108">
+				<li>
+					<div class="naTit">
+						<span><a href="/gcjs">工程建设</a></span>
+					</div></li>
+				<li>
+					<div class="naTit">
+						<span><a href="/zfcg">铁路工程</a></span>
+					</div></li>
+			</ul>
+		</div>
 	</div>
 
 
@@ -257,6 +345,7 @@ var _htmlFontSize = (function(){
 			<div class="show-layer">
 				<div class="search-vide">
 					<form action="/gcjs" method="get">
+					<div class="search-form-box">
 						<input name="title" placeholder="输入招标项目名称" value="{{$title}}"/>
 						<select name="acode">
 							<option value="">—全部—</option>
@@ -290,32 +379,17 @@ var _htmlFontSize = (function(){
 							<option <?php echo $price==4 ? 'selected="selected"':'';?> value="4">5000万以上</option>
 						</select>
 						<button type="submit" class="search-btn">搜索</button>
+					</div>
 					</form>
 				</div>
 			</div>
 			<div class="about_Introduction">
-				<!--公司简介左边内容-->
-				<div class="about_Introduction_left">
-					<div class="left_title">
-						<div class="abNav">
-							<ul>
-								<li>
-									<div class="naTit">
-										<span><a href="/gcjs">工程建设</a></span>
-									</div></li>
-								<li>
-									<div class="naTit">
-										<span><a href="/zfcg">铁路工程</a></span>
-									</div></li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				
 				<!--公司简介右边内容-->
 				<div class="about_Introduction_right">
 					<div class="right_title">
-						<span>工程建设</span>
-						<p style="border-bottom: 2px solid #0081cb;width: 76px;"></p>
+						<span style="padding-left: 10px;">工程建设</span>
+						<p style="border-bottom: 2px solid #0081cb;/*width: 76px;*/"></p>
 					</div>
                     <?php if(!empty($data)) { ?>
 					<div class="right_main">
