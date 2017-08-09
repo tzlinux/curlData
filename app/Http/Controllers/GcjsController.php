@@ -44,7 +44,7 @@ Class GcjsController extends Controller
         $acode = isset($input['acode']) ? $input['acode'] : '';
 
         $res = DB::table('constructions');
-        $res->orderBy('create_at', 'desc');
+        $res->orderBy('created_at', 'desc');
         if((!empty($input['title'])) || (!empty($input['price'])) || (!empty($input['acode']))) {
 
             $value = $request->session()->get('user_name');
