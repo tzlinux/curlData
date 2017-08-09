@@ -125,22 +125,24 @@ abstract class Spider extends Command
                         $a = '阳';
                         $b = '眉';
 
-                        $exp = explode('-',$content['owner_contact']);
-                        $content['acode'] = $exp[0];
-
-                        if($content['acode'] == '028')
+                        if(isset($content['owner_contact']))
                         {
-                            if(strpos($content['ifb_address'],$a) !== false)
-                            {
-                                $content['acode'] = '0281';
-                            }
+                            $exp = explode('-',$content['owner_contact']);
+                            $content['acode'] = $exp[0];
 
-                            if(strpos($content['ifb_address'],$b) !== false)
+                            if($content['acode'] == '028')
                             {
-                                $content['acode'] = '0282';
+                                if(strpos($content['ifb_address'],$a) !== false)
+                                {
+                                    $content['acode'] = '0281';
+                                }
+
+                                if(strpos($content['ifb_address'],$b) !== false)
+                                {
+                                    $content['acode'] = '0282';
+                                }
                             }
                         }
-
 
                         $bid = $this->model()->create($content);
                         /*分开录入*/

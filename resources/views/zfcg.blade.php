@@ -267,7 +267,7 @@
                 @foreach ($data as $user)
                    <?php $len = mb_strlen($user->title); $index=33; ?>
                 <li>&gt;
-                    <span>{{$user->created_at}}</span>
+                    <span>{{date('Y-m-d',strtotime($user->created_at))}}</span>
                      @if ($len >$index)
                       <a href="/zfcg_info/{{$user->uuid}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
                      @else

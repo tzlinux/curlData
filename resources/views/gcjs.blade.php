@@ -261,7 +261,7 @@
            <ul class="newsList">
                 @foreach ($data as $user)
                 <li>&gt;
-                    <span>{{$user->created_at}}</span>
+                    <span>{{date('Y-m-d',strtotime($user->created_at))}}</span>
                     <?php $len = mb_strlen($user->title); $index=33; ?>
                      @if ($len >$index)
                       <a href="/gcjs_info/{{$user->uuid}}" target="_blank"><?php echo mb_substr($user->title,0,$index).'...';?></a>
