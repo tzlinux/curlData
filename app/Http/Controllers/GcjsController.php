@@ -38,6 +38,7 @@ Class GcjsController extends Controller
     {
 
         $input = $input=Request::all();
+        $active = isset($input['active']) ? $input['active'] : '';
         $title = isset($input['title']) ? $input['title'] : '';
         $price = isset($input['price']) ? $input['price'] : '';
         $acode = isset($input['acode']) ? $input['acode'] : '';
@@ -123,7 +124,7 @@ Class GcjsController extends Controller
         if (isset ($_SERVER['HTTP_USER_AGENT'])){
             $from = strtolower($_SERVER['HTTP_USER_AGENT']);
             if(strpos($from,'mobile')) {
-                return view('m.gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode]);
+                return view('m.gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode,'active'=>$active]);
             }else{
                 return view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode]);
             }
