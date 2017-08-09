@@ -39,7 +39,7 @@ Route::get('/yanz','user\UserController@clear');
  * 留言
  * */
 
-Route::get('/guestbook','user/UserController@guestbook');
+Route::any('/guestbook','user\UserController@guestbook');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

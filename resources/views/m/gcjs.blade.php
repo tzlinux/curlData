@@ -31,6 +31,20 @@
 .fk-tabStyle2 .f-formTabButtonList .formTabButtonClick{border-bottom-color:#b50100;}
 .fk-tabStyle2 .f-formTabButtonList .formTabButtonClick{color:#b50100;}
 .fk-tabStyle1 div.formTabButtonClick .f-formTabMiddle{background-color:#b50100;}
+#svebar_1 .icon-serItemIcon:before{content:'\e62c';content:'\e62c';}
+#svebar_1 .icon-serItemIcon{background-image:none;}
+.open .navItem:nth-child(4) {transition-delay: 240ms;}
+#svebar_3 .icon-serItemIcon:before{content:'\e67c';content:'\e67c';}
+#svebar_3 .icon-serItemIcon{background-image:none;}
+.open .navItem:nth-child(6) {transition-delay: 320ms;}
+#svebar_4 .icon-serItemIcon:before{content:'\e6b2';content:'\e6b2';}
+#svebar_4 .icon-serItemIcon{background-image:none;}
+.open .navItem:nth-child(8) {transition-delay: 400ms;}
+#svebar_2 .icon-serItemIcon:before{content:'\e6a0';content:'\e6a0';}
+#svebar_2 .icon-serItemIcon{background-image:none;}
+.open .navItem:nth-child(10) {transition-delay: 480ms;}
+#svebar_5 .icon-serItemIcon:before{content:'\e6ca';content:'\e6ca';}
+#svebar_5 .icon-serItemIcon{background-image:none;}
 </style>
 <!-- //输出模块样式css -->
 <style id="mobiStyleModule">
@@ -201,7 +215,7 @@ var _htmlFontSize = (function(){
 	}
 	
 </script>
-<div id="webTips" class="webTips jz-webTips">
+{{--<div id="webTips" class="webTips jz-webTips">
 	<div id="mobitips" class="mobitips">
 		<div class="mobiScrollbar">
 			<div class="j-marqueeContainer J_marqueeContainer" style="width: 1324px; left: 0px; top: 0px;-webkit-animation: mobi_notice_right_to_left_50 18.914285714285715s linear 1s infinite;-moz-animation: mobi_notice_right_to_left_50 18.914285714285715s linear 1s infinite;-o-animation: mobi_notice_right_to_left_50 18.914285714285715s linear 1s infinite;animation: mobi_notice_right_to_left_50 18.914285714285715s linear 1s infinite;">
@@ -215,7 +229,7 @@ var _htmlFontSize = (function(){
 			</div>
 		</div>
 	</div>
-</div>
+</div>--}}
 <div class="webLeft">
 </div>
 <div id="g_web" class="g_web">
@@ -259,8 +273,8 @@ var _htmlFontSize = (function(){
 				</div>
 				<div 1="" id="itemSep_108" class="itemSep">
 				</div>
-				<div id="navItem_108" class="navItem navItem_108 <?php echo $active==108  ? "itemSelected":''; ?> icon-navItem">
-					<a href="/gcjs?active=108" _colid="108" id="navbar_108"><span class="navItemIcon icon-navItemIcon J_fontIcon"></span><span class="navItemName">中标公告</span></a>
+				<div id="navItem_108" class="navItem navItem_108 <?php echo $active==108  ? "itemSelected":''; ?> icon-navItem" onclick = "showTips(this);">
+					<a _colid="108" id="navbar_108"><span class="navItemIcon icon-navItemIcon J_fontIcon"></span><span class="navItemName">中标公告</span></a>
 				</div>
 				<div 1="" id="itemSep_107" class="itemSep">
 				</div>
@@ -303,20 +317,8 @@ var _htmlFontSize = (function(){
 		</div>
 		<!--公司简介左边内容-->
 			
-		<div id="select108" class="abNav">
-			<ul class="select108">
-				<li>
-					<div class="naTit">
-						<span><a href="/gcjs">工程建设</a></span>
-					</div></li>
-				<li>
-					<div class="naTit">
-						<span><a href="/zfcg">铁路工程</a></span>
-					</div></li>
-			</ul>
-		</div>
-	</div>
 
+	</div>
 
 		<div class="webMapServiceBox fk-webMapServiceBox" id="webMapServiceBox">
 			<div style="display:table;height:100%;width:100%;border-collapse: collapse;">
@@ -406,9 +408,7 @@ var _htmlFontSize = (function(){
 								</li>
 							@endforeach
 						</ul>
-						<div style="margin-top:10px">
-							{{$data->appends(['title'=>$title,'price'=>$price,'acode'=>$acode])->links()}}
-						</div>
+
 					</div>
                     <?php } ?>
 				</div>
@@ -417,8 +417,18 @@ var _htmlFontSize = (function(){
 	</div>
 
 </div>
-	<div id="fixedAreaBox" class="fixedAreaBox fixedAreaBox1004_2" tplid="1004_2">
-	</div>
+
+<div id="webCustomerServiceBox" class="webCustomerServiceBox" style="display: block; opacity: 1;"><div class="customerServiceDiv moveAnimation" id="customerServiceDiv"><div id="customServiceLine_1" class="customServiceLine"></div><div class="service serviceClass_1" id="customerServiceType_1" style="width: 25%;"><div id="navItem_1" class="navItem navItem_1 icon-navItem"><a id="numberHref_1" href="tel:020-000000"><div class="serBaseIcon">
+						<div class="icon" id="svebar_1"><span class="serItemIcon icon-serItemIcon"></span><div id="describeName_1" class="describe">电话咨询</div></div></div></a></div></div><div id="customServiceLine_3" class="customServiceLine"></div><div class="service serviceClass_3" id="customerServiceType_3" style="width: 25%;"><div id="navItem_3" class="navItem navItem_3 icon-navItem"><a id="numberHref_3" href="javascript:;" onclick="Mobi.showMapService()"><div class="serBaseIcon">
+						<div class="icon" id="svebar_3"><span class="serItemIcon icon-serItemIcon"></span><div id="describeName_3" class="describe">在线地图</div></div></div></a></div></div><div id="customServiceLine_4" class="customServiceLine"></div><div class="service serviceClass_4" id="customerServiceType_4" style="width: 25%;"><div id="navItem_4" class="navItem navItem_4 icon-navItem"><a id="numberHref_4" href="/guestbook"><div class="serBaseIcon">
+						<div class="icon" id="svebar_4"><span class="serItemIcon icon-serItemIcon"></span><div id="describeName_4" class="describe">在线留言</div></div></div></a></div></div><div id="customServiceLine_5" class="customServiceLine"></div><div class="service serviceClass_5" id="customerServiceType_5" style="width: 25%;"><div id="navItem_5" class="navItem navItem_5 icon-navItem"><a id="numberHref_5" target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=753138&amp;site=qq&amp;menu=yes"><div class="serBaseIcon">
+						<div class="icon" id="svebar_5"><span class="serItemIcon icon-serItemIcon"></span><div id="describeName_5" class="describe">QQ客服</div></div></div></a></div></div></div>
+</div>
+
+<div style="margin-top:80px;display: block;">
+	{{$data->appends(['title'=>$title,'price'=>$price,'acode'=>$acode])->links()}}
+</div>
+
 	<!--设置网站的背景颜色  start-->
 	<div class="webBackgroundBox ">
 

@@ -32,15 +32,19 @@ class UserController extends Controller
 
     public function guestbook(RequestandResponse $request)
     {
-        $input = $input=Request::all();
-        $res  = DB::table('guestbook')->insert([
-                'ip'       => $request->getClientIp(),
-                'email'    => $input['email'],
-                'useranme' => $input['username'],
-                'phone'    => $input['phone'],
-                'title'    => $input['title'],
-                'content'  => $input['content'],
-            ]);
-        return view('m.guestbook',['data'=>$res]);
+        if($request->isMethod('post')) {
+            $input = $input=Request::all();
+            $res  = DB::table('guestbook')->insert([
+                    'ip'       => $request->getClientIp(),
+                    'email'    => $input['email'],
+                    'useranme' => $input['username'],
+                    'phone'    => $input['phone'],
+                    'title'    => $input['title'],
+                    'content'  => $input['content'],
+                ]);
+        }else{
+            return view('m.guestbook');
+        }
+
     }
 }
