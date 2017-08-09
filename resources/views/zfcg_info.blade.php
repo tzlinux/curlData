@@ -180,7 +180,7 @@
                             </table>
 
                             </p><br>
-                            <p class="ParagraphIndent" align="right">2017年7月31日</p></div>
+                            <p class="ParagraphIndent" align="right">{{date('Y-m-d',strtotime($data->created_at))}}</p></div>
                         <script type="text/javascript"
                                 src="http://yyfw.epoint.com.cn/FrontVoice/JavaScript/jquery.js"></script>
                         <script type="text/javascript"> var voiceconverturl = 'http://yyfw.epoint.com.cn/FrontVoice/DefaultFlash.aspx?altstop=1';</script>

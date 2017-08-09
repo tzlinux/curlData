@@ -130,7 +130,7 @@ Class GcjsController extends Controller
             die;
         }
         $user = DB::table('constructions')->where('uuid', '=', $id)->get()->toArray();
-        return tredon_view('m.gcjs_info',['data'=>$user[0]]);
+        return tredon_view('gcjs_info',['data'=>$user[0]]);
     }
 
 }

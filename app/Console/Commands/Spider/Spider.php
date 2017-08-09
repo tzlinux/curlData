@@ -149,10 +149,6 @@ abstract class Spider extends Command
                         $model = new Bidder();
                         foreach($content['bidders'] as $bidder)
                         {
-//                            Bidder::create(array_merge($bidder, [
-//                                'r_id' => $bid->id,
-//                                'category' => $this->category
-//                            ]));
                             $data['r_id'] = $content['uuid'];
                             $data['category'] = $this->category;
                             $data['rank']    = $bidder['rank'];
