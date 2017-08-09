@@ -33,17 +33,41 @@ class UserController extends Controller
     public function guestbook(RequestandResponse $request)
     {
         if($request->isMethod('post')) {
+
             $input = $input=Request::all();
-            $res  = DB::table('guestbook')->insert([
-                    'ip'       => $request->getClientIp(),
-                    'email'    => $input['email'],
-                    'useranme' => $input['username'],
-                    'phone'    => $input['phone'],
-                    'title'    => $input['title'],
-                    'content'  => $input['content'],
-                ]);
+            $token = isset($input['token']) ? $input['token'] : '';
+
+            if ($request->session()->exists('token') && $token!='') {
+                $request->session()->forget('token');
+            }
+            else{
+                return redirect('/guestbook');
+            }
+            try{
+                if(empty($input['username']) || empty($input['email']) || empty($input['content'])) {
+                    echo '用户,邮箱,内容必须填写';
+                    die;
+                }
+                $res  = DB::table('guestbook')->insert([
+                        'ip'       => $request->getClientIp(),
+                        'username' => $input['username'],
+                        'email'    => $input['email'],
+                        'phone'    => $input['phone'],
+                        'title'    => $input['title'],
+                        'content'  => $input['content'],
+                    ]);
+                if($res){
+                    echo '感谢您的反馈...';
+                }
+            }catch (\Exception $e){
+                echo '系统错误'.$e->getMessage();
+            }
+
         }else{
-            return view('m.guestbook');
+            //防止表单重复提交
+            $token = md5(uniqid().time());
+            $request->session()->put('token',$token);
+            return view('m.guestbook',['token'=>$token]);
         }
 
     }

@@ -268,26 +268,32 @@ var _htmlFontSize = (function(){
 										<div class="notice" style="display:none;">
 										</div>
 									</div>
-									<div class="g_globalLine">
-										<input id="reqName" type="text" maxlength="50 " placeholder="姓名(必填)" class="msg_isMust msg_ipt g_input"><span class="icon-mnameIcon"></span>
-									</div>
-									<div class="g_globalLine">
-										<input id="reqEmail" type="email" value="" maxlength="50 " placeholder="邮箱" class=" msg_ipt g_input"><span class="icon-memailIcon"></span>
-									</div>
-									<div class="g_globalLine">
-										<input id="reqPhone" type="tel" value="" maxlength="50 " placeholder="电话" class=" msg_ipt g_input"><span class="icon-mphoneIcon"></span>
-									</div>
-									<div class="g_globalLine">
-										<textarea id="reqContent" class="g_textArea msg_textArea" maxlength="10000" placeholder="内容："></textarea><span class="icon-mmsgIcon"></span>
-									</div>
-									<div style="clear:both">
-									</div>
-									<div class="g_globalLine J_msgBoardCaptcha msgBoardCaptchaHide">
-										<input id="msgBoardCaptcha" type="text" class="captchaText g_input" maxlength="4" placeholder="请输入验证码"><img id="msgBoardCaptchaImg" class="captchaImg" src="./留言板 - 四川招标项目网_files/validateCode.jsp" onclick="Mobi.changeValidateCode(jm(&quot;#msgBoardCaptchaImg&quot;))">
-									</div>
-									<div class="g_globalLine ">
-										<input type="button" class="g_button sendIcon msgSubmitButton submitIcon" onclick="Mobi.msgBoardAddMsg(false,0,7)" value="提交"><span class="mustSpan">&nbsp;&nbsp;</span>
-									</div>
+									<form action="/guestbook" method="post">
+										<div class="g_globalLine">
+											<input id="reqName" name="username" type="text" maxlength="50 " placeholder="姓名(必填)" class="msg_isMust msg_ipt g_input"><span class="icon-mnameIcon"></span>
+										</div>
+										<div class="g_globalLine">
+											<input id="reqEmail" name="email" type="email" value="" maxlength="50 " placeholder="邮箱" class=" msg_ipt g_input"><span class="icon-memailIcon"></span>
+										</div>
+										<div class="g_globalLine">
+											<input id="reqPhone" name="phone" type="tel" value="" maxlength="50 " placeholder="电话" class=" msg_ipt g_input"><span class="icon-mphoneIcon"></span>
+										</div>
+										<div class="g_globalLine">
+											<input id="reqTitle" name="title" type="tel" value="" maxlength="50 " placeholder="标题" class=" msg_ipt g_input"><span class=""></span>
+										</div>
+										<div class="g_globalLine">
+											<textarea id="reqContent" name="content" class="g_textArea msg_textArea" maxlength="10000" placeholder="内容："></textarea><span class=""></span>
+										</div>
+										<input type="hidden" name="token" value="{{$token}}">
+										<div style="clear:both">
+										</div>
+										{{--<div class="g_globalLine J_msgBoardCaptcha msgBoardCaptchaHide">--}}
+											{{--<input id="msgBoardCaptcha" type="text" class="captchaText g_input" maxlength="4" placeholder="请输入验证码"><img id="msgBoardCaptchaImg" class="captchaImg" src="./留言板 - 四川招标项目网_files/validateCode.jsp" onclick="Mobi.changeValidateCode(jm(&quot;#msgBoardCaptchaImg&quot;))">--}}
+										{{--</div>--}}
+										<div class="g_globalLine ">
+											<input type="submit" class="g_button sendIcon msgSubmitButton submitIcon" value="提交"><span class="mustSpan">&nbsp;&nbsp;</span>
+										</div>
+									</form>
 								</div>
 								<div class="msgBottom msgBottomDisplay">
 									<div class="msgBottomTop">
@@ -321,9 +327,6 @@ var _htmlFontSize = (function(){
 				<div class="technical">
 					<div class="technicalSupport footerInfo">
 						<font face="Arial">©</font>2017&nbsp;-&nbsp;版权所有
-					</div>
-					<div class="technicalSupport">
-						<a href="http://mjz.faisco.com/?_ta=2508" target="_blank" hidefocus="true">本站使用&nbsp;<span class="faisco-icons-logo"></span>凡科建站&nbsp;搭建</a><span class="footerSep PcVer">|</span><a class="PcVer" href="http://www.bc13824986.icoc.me/?_siteUrl" target="_blank" hidefocus="true">电脑版</a><span class="footerSep PcVer">|</span><a class="rep PcVer" href="http://m.faisco.com/ts.jsp?acct=bc13824986" target="_blank" hidefocus="true">举报</a>
 					</div>
 				</div>
 			</div>

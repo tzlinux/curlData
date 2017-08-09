@@ -22,6 +22,11 @@ class ZfcgController extends Controller
         $price = '-1';
 
         $input = $input=Request::all();
+        $active = isset($input['active']) ? $input['active'] : '';
+        $title = isset($input['title']) ? $input['title'] : '';
+        $price = isset($input['price']) ? $input['price'] : '';
+        $acode = isset($input['acode']) ? $input['acode'] : '';
+
         if(!empty($input['title'])) {
 
             $value = $request->session()->get('user_name');
@@ -91,7 +96,7 @@ class ZfcgController extends Controller
             $res = DB::table('railways')->paginate(10);
         }
 
-        return view('zfcg',['data'=>$res,'title'=>$title,'price'=>$price]);
+        return tredon_view('zfcg',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode,'active'=>$active]);
     }
 
     public function info(RequestandResponse $request,$id)
@@ -103,7 +108,7 @@ class ZfcgController extends Controller
         }
         $user = DB::table('railways')->where('uuid', '=', $id)->get()->toArray();
 
-        return view('zfcg_info',['data'=>$user[0]]);
+        return tredon_view('zfcg_info',['data'=>$user[0]]);
     }
 
 }

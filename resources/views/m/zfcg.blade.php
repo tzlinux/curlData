@@ -357,7 +357,7 @@ var _htmlFontSize = (function(){
 		<div class="about_center1">
 			<div class="show-layer">
 				<div class="search-vide">
-					<form action="/gcjs" method="get">
+					<form action="/zfcg" method="get">
 					<div class="search-form-box">
 						<input name="title" placeholder="输入招标项目名称" value="{{$title}}"/>
 						<select name="acode">
@@ -401,7 +401,7 @@ var _htmlFontSize = (function(){
 				<!--公司简介右边内容-->
 				<div class="about_Introduction_right">
 					<div class="right_title">
-						<span style="padding-left: 10px;">工程建设</span>
+						<span style="padding-left: 10px;">铁路工程</span>
 						<p style="border-bottom: 2px solid #0081cb;/*width: 76px;*/"></p>
 					</div>
                     <?php if(!empty($data)) { ?>
@@ -415,8 +415,8 @@ var _htmlFontSize = (function(){
 									@else
 										<a href="/gcjs_info/{{$user->uuid}}" target="_blank">{{$user->title}}</a>
 									@endif
-										&nbsp;&nbsp;
-										<span>{{date('Y-m-d',strtotime($user->created_at))}}</span>
+									&nbsp;&nbsp;
+									<span>{{date('Y-m-d',strtotime($user->created_at))}}</span>
 								</li>
 							@endforeach
 						</ul>

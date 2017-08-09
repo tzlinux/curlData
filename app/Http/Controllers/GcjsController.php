@@ -118,18 +118,8 @@ Class GcjsController extends Controller
             }
 
         }
-
         $res = $res->paginate(10);
-        //判断是否移动端
-        if (isset ($_SERVER['HTTP_USER_AGENT'])){
-            $from = strtolower($_SERVER['HTTP_USER_AGENT']);
-            if(strpos($from,'mobile')) {
-                return view('m.gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode,'active'=>$active]);
-            }else{
-                return view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode]);
-            }
-        }
-
+        return tredon_view('gcjs',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode,'active'=>$active]);
     }
 
     public function info(RequestandResponse $request,$id)
@@ -140,16 +130,7 @@ Class GcjsController extends Controller
             die;
         }
         $user = DB::table('constructions')->where('uuid', '=', $id)->get()->toArray();
-
-        if (isset ($_SERVER['HTTP_USER_AGENT'])) {
-            $from = strtolower($_SERVER['HTTP_USER_AGENT']);
-            if(strpos($from,'mobile')) {
-                return view('m.gcjs_info',['data'=>$user[0]]);
-            }else{
-                return view('gcjs_info',['data'=>$user[0]]);
-            }
-        }
-
+        return tredon_view('m.gcjs_info',['data'=>$user[0]]);
     }
 
 }
