@@ -18,7 +18,7 @@
 <meta http-equiv="Pragma" content="no-cache">
 
 <link rel="stylesheet" type="text/css" href="http://mo.faisys.com/css/fontsIco.min.css?v=201707171211" />
-<link rel="stylesheet" type="text/css" href="/css/h5/base.min.css?v=201708031457" title="default" />
+<link rel="stylesheet" type="text/css" href="/css/h5/base.min.css?v=2" title="default" />
 <link rel="stylesheet" type="text/css" href="http://mo.faisys.com/css/bannerAnimation.min.css?v=201611211856" title="" />
 
 
