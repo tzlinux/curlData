@@ -12,6 +12,7 @@ class XinwenController extends Controller
 {
     public function addnews(RequestandResponse $request)
     {
+        echo 'sss';die;
         $res = [];
         $res = DB::table('news')->orderBy('id')->paginate(10);
         return tredon_view('user.newsadd',['data'=>$res]);
