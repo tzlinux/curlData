@@ -1,12 +1,10 @@
 <?php
 namespace App\Http\Controllers\user;
 
-//use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Http\Request as RequestandResponse;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request as RequestandResponse;
 
 class XinwenController extends Controller
 {
