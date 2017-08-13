@@ -8,7 +8,7 @@ use Illuminate\Http\Request as RequestandResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\DB;
 
-class NewsaddController extends Controller
+class XinwenController extends Controller
 {
     public function addnews(RequestandResponse $request)
     {

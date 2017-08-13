@@ -48,8 +48,8 @@ Route::any('/guestbook','user\UserController@guestbook');
 //发布新闻
 
 Route::get('/news','NewsController@news');
-Route::get('/addnews','user\NewsaddController@addnews');
-Route::post('/news_action','user\NewsaddController@news_action');
+Route::get('/addnews','user\XinwenController@addnews');
+Route::post('/news_action','user\XinwenController@news_action');
 Route::get('/news_detail/{id}','NewsController@news_detail');
 
 
