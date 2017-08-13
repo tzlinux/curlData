@@ -4,8 +4,10 @@ namespace App\Http\Controllers\user;
 //use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request as RequestandResponse;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\DB;
+
 class NewsaddController extends Controller
 {
     public function addnews(RequestandResponse $request)
