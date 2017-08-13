@@ -34,12 +34,22 @@ Route::any('/denglu','user\ZhuceController@denglu');
 Route::get('/user_list','user\UserController@user_list');
 Route::get('/clear','user\UserController@clear');
 Route::get('/yanz','user\UserController@clear');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 /*
  * 留言
  * */
 
 Route::any('/guestbook','user\UserController@guestbook');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+//发布新闻
+
+Route::get('/news','NewsController@news');
+Route::get('/addnews','user\NewsaddController@addnews');
+Route::post('/news_action','user\NewsAddController@news_action');
+Route::get('/news_detail/{id}','NewsController@news_detail');
+
+

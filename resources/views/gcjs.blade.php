@@ -150,9 +150,9 @@
    <div class="nav"> 
     <ul id="nav"> 
      <li><a href="">首 页</a></li> 
-     <li><a href="Aboutus.html">关于AMAE</a> 
+     <li><a href="/news">关于AMAE</a>
       <ul> 
-       <li><a href="Aboutus.html">公司简介</a></li> 
+       <li><a href="/news">公司简介</a></li>
        <li><a href="_yHnKHc.html">公司荣誉</a></li> 
       </ul> </li> 
      <li><a href="product/">产品中心</a> 
@@ -288,7 +288,7 @@
     <div class="section information"> 
      <span>关于AMAE</span> 
      <ul> 
-      <li><a href="Aboutus.html">公司简介</a></li> 
+      <li><a href="/news">公司简介</a></li>
       <li><a href="_yHnKHc.html">公司荣誉</a></li> 
      </ul> 
     </div> 

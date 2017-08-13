@@ -96,7 +96,7 @@ class ZfcgController extends Controller
             $res = DB::table('railways')->paginate(10);
         }
 
-        return tredon_view('zfcg',['data'=>$res,'title'=>$title,'price'=>$price,'acode'=>$acode,'active'=>$active]);
+        return tredon_view('zfcg',['data'=>$res,'title'=>$title,'price'=>$price]);
     }
 
     public function info(RequestandResponse $request,$id)

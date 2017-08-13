@@ -127,6 +127,11 @@ return [
             'url'  => '/user_list',
             'icon' => 'user',
         ],
+        [
+            'text' => '发布新闻',
+            'url'  => '/addnews',
+            'icon' => 'lock',
+        ],
 //        [
 //            'text' => 'Change Password',
 //            'url'  => 'admin/settings',

@@ -46,7 +46,7 @@ class UserController extends Controller
             try{
                 if(empty($input['username']) || empty($input['email']) || empty($input['content'])) {
                     echo '用户,邮箱,内容必须填写';
-                    die;
+
                 }
                 $res  = DB::table('guestbook')->insert([
                         'ip'       => $request->getClientIp(),
