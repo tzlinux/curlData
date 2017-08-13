@@ -49,7 +49,7 @@ Route::any('/guestbook','user\UserController@guestbook');
 
 Route::get('/news','NewsController@news');
 Route::get('/addnews','user\NewsaddController@addnews');
-Route::post('/news_action','user\NewsAddController@news_action');
+Route::post('/news_action','user\NewsaddController@news_action');
 Route::get('/news_detail/{id}','NewsController@news_detail');
 
 
