@@ -120,7 +120,10 @@ abstract class Spider extends Command
                 $content = $this->digContent($html);
 
                 // 每天连续挖掘会有重复的 按道理来说如果已经存在就应该直接跳出去了 但是呢 Guzzle 会随机返回... 所以暂时先每次都查询一波
+//                var_dump(!is_null($content['uuid']) && !$this->has($content['uuid']));
+                \Log::error('11111');
                 if (! is_null($content['uuid']) && ! $this->has($content['uuid'])) {
+                    \Log::error('2222');
                     try {
                         $a = '阳';
                         $b = '眉';
