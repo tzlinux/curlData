@@ -124,6 +124,7 @@ Class GcjsController extends Controller
 
     public function info(RequestandResponse $request,$id)
     {
+
         $value = $request->session()->get('user_name');
         if(empty($value)){
             return view('yanz');

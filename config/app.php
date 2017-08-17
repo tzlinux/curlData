@@ -166,6 +166,7 @@ return [
         /*
          * Package Service Providers...
          */
+        Overtrue\LaravelUEditor\UEditorServiceProvider::class,
         Laravel\Tinker\TinkerServiceProvider::class,
 
         /*

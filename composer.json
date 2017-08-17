@@ -11,7 +11,8 @@
         "jeroennoten/laravel-adminlte": "^1.19",
         "laravel/framework": "5.4.*",
         "laravel/tinker": "~1.0",
-        "vlucas/phpdotenv": "~2.2"
+        "vlucas/phpdotenv": "~2.2",
+        "overtrue/laravel-ueditor":"~1.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
