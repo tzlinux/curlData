@@ -103,7 +103,7 @@
 		</div>
 	</div>
 	<script language="JavaScript" type="text/javascript">//此转换代码转贴自网络特此说明
-//document.write(" <a name=\"StranLink\">繁體中文</a>");
+
 var Default_isFT = 0		//默认是否繁体，0-简体，1-繁体
 var StranIt_Delay = 50 //翻译延时毫秒（设这个的目的是让网页先流畅的显现出来）
 /*
@@ -299,12 +299,15 @@ if (StranLink_Obj)
     					<ul class="newslistshow">
 							<h1>{{$data->title}}</h1>
 							<div class="autoscr">
-			   {{$data->content}}
+
+							<div id="content">
+							    <?php echo $data->content;?>
+							</div>
     				</div>
     			</div>
     		</div>
     	</div>
-    
+
 	<!--底部-->
 	<!--底部-->
 	<div id="footer">
