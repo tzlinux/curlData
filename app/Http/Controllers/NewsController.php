@@ -12,7 +12,7 @@ class NewsController extends Controller
     public function news()
     {
         $res = [];
-        $res = DB::table('news')->orderBy('id')->paginate(10);
+        $res = DB::table('news')->orderBy('id','desc')->paginate(10);
         return tredon_view('news',['data'=>$res]);
     }
 

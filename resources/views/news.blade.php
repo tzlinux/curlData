@@ -218,7 +218,7 @@
 			<!--公司简介右边内容-->
 			<div class="about_Introduction_right">
 				<div class="right_title">
-					<span>铁路工程</span>
+					<span>新闻列表</span>
 					<p style="border-bottom: 2px solid #0081cb;width: 76px;"></p>
 				</div>
                 <?php if(!empty($data)) { ?>
