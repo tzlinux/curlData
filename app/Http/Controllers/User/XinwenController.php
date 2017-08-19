@@ -19,6 +19,10 @@ class XinwenController extends Controller
     public function news_action()
     {
         $input = $input=Request::all();
+        if(empty($input['content']) || empty($input['title'])){
+            echo '标题和内容不能为空';
+            die;
+        }
         $flog = DB::insert('insert into news (`title`,`content`,`status`,`ctime`) values (?,?,?,?)',
             [$input['title'],$input['content'],1,time()]);
 
